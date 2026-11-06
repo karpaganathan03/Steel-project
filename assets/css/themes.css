@@ -1,0 +1,94 @@
+[data-theme="light"] {
+  color-scheme: light;
+  --color-navy: #0F1E2E;
+  --color-charcoal: #1C242C;
+  --color-steel: #6B7885;
+  --color-light-steel: #E9EDF1;
+  --color-orange: #F26A1B;
+  --color-orange-text: #A83F00;
+  --color-success: #1F9D55;
+  --color-success-text: #176B3A;
+  --color-error: #D64545;
+  --color-error-text: #B32626;
+  --color-white: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-surface: #F7F9FA;
+  --color-surface-raised: #FFFFFF;
+  --color-text: #1C242C;
+  --color-muted: #596673;
+  --color-border: #D8DEE4;
+  --color-focus: #A83F00;
+  --color-action-hover-bg: #1C242C;
+  --color-action-hover-text: #FFFFFF;
+  --color-inverse: #FFFFFF;
+  --color-on-dark: #E9EDF1;
+  --color-shadow: rgb(15 30 46 / 10%);
+  --color-shadow-strong: rgb(15 30 46 / 18%);
+  --color-overlay-start: rgb(15 30 46 / 94%);
+  --color-overlay-mid: rgb(15 30 46 / 78%);
+  --color-overlay-soft: rgb(15 30 46 / 18%);
+  --color-overlay-half: rgb(15 30 46 / 52%);
+  --color-drawer-overlay: rgb(10 21 32 / 58%);
+  --color-header: rgb(255 255 255 / 92%);
+  --color-header-border: rgb(15 30 46 / 10%);
+  --shadow-card: 0 12px 32px var(--color-shadow);
+  --shadow-raised: 0 18px 40px var(--color-shadow-strong);
+  --header-blur: blur(16px);
+  --hero-gradient: linear-gradient(90deg, var(--color-overlay-start) 0%, var(--color-overlay-mid) 68%, var(--color-overlay-mid) 100%);
+  --page-hero-gradient: linear-gradient(90deg, var(--color-overlay-start) 0%, var(--color-overlay-mid) 100%);
+  --select-arrow: linear-gradient(45deg, transparent 50%, var(--color-muted) 50%), linear-gradient(135deg, var(--color-muted) 50%, transparent 50%);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-navy: #0A1520;
+  --color-charcoal: #E9EDF1;
+  --color-steel: #AAB5BF;
+  --color-light-steel: #293744;
+  --color-orange: #F26A1B;
+  --color-orange-text: #FF9B68;
+  --color-success: #49C47B;
+  --color-success-text: #49C47B;
+  --color-error: #FF7777;
+  --color-error-text: #FF7777;
+  --color-white: #182531;
+  --color-bg: #111D28;
+  --color-surface: #182531;
+  --color-surface-raised: #1D2D3A;
+  --color-text: #E9EDF1;
+  --color-muted: #B5C0C9;
+  --color-border: #3A4B59;
+  --color-focus: #FFAD7D;
+  --color-action-hover-bg: #F26A1B;
+  --color-action-hover-text: #0A1520;
+  --color-inverse: #FFFFFF;
+  --color-on-dark: #E9EDF1;
+  --color-shadow: rgb(0 0 0 / 30%);
+  --color-shadow-strong: rgb(0 0 0 / 48%);
+  --color-overlay-start: rgb(5 13 20 / 96%);
+  --color-overlay-mid: rgb(5 13 20 / 84%);
+  --color-overlay-soft: rgb(5 13 20 / 30%);
+  --color-overlay-half: rgb(5 13 20 / 64%);
+  --color-drawer-overlay: rgb(0 0 0 / 68%);
+  --color-header: rgb(17 29 40 / 92%);
+  --color-header-border: rgb(233 237 241 / 12%);
+  --shadow-card: 0 12px 32px var(--color-shadow);
+  --shadow-raised: 0 18px 40px var(--color-shadow-strong);
+  --header-blur: blur(16px);
+  --hero-gradient: linear-gradient(90deg, var(--color-overlay-start) 0%, var(--color-overlay-mid) 68%, var(--color-overlay-mid) 100%);
+  --page-hero-gradient: linear-gradient(90deg, var(--color-overlay-start) 0%, var(--color-overlay-mid) 100%);
+  --select-arrow: linear-gradient(45deg, transparent 50%, var(--color-muted) 50%), linear-gradient(135deg, var(--color-muted) 50%, transparent 50%);
+}
+
+body,
+.site-header,
+.site-nav,
+.feature-card,
+.product-card,
+.info-card,
+.contact-method,
+.field,
+.table-scroll,
+.style-panel {
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}

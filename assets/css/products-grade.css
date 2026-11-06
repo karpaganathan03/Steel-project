@@ -1,0 +1,202 @@
+.products-grade__breadcrumb {
+  padding-block: var(--space-3);
+}
+
+.products-grade__hero {
+  min-height: 320px;
+}
+
+.products-grade__hero .page-hero__content {
+  padding-block: var(--space-8);
+}
+
+.products-grade__filters {
+  margin-block-end: var(--space-8);
+}
+
+.grade-tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding: var(--space-2) var(--space-1) var(--space-3);
+  scrollbar-color: var(--color-steel) transparent;
+  scrollbar-width: thin;
+}
+
+.grade-tab {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.grade-tab:hover {
+  border-color: var(--color-orange);
+}
+
+.grade-tab[aria-selected="true"] {
+  border-color: var(--color-navy);
+  color: var(--color-inverse);
+  background: var(--color-navy);
+}
+
+.grade-tab:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.products-grade__result-count {
+  min-height: 1.5em;
+  margin-block-end: var(--space-4);
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.products-grade__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: var(--space-4);
+}
+
+.grade-card {
+  display: flex;
+  min-width: 0;
+  align-items: stretch;
+  flex-direction: column;
+  padding: var(--card-padding);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.grade-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
+}
+
+.grade-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-end: var(--space-4);
+}
+
+.grade-card__header h3 {
+  margin: 0;
+}
+
+.grade-card__header .badge {
+  flex: 0 0 auto;
+}
+
+.grade-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-block-end: var(--space-4);
+}
+
+.grade-card__metric {
+  min-width: 0;
+  padding: var(--space-3);
+  border-radius: calc(var(--radius) / 2);
+  background: var(--color-surface);
+}
+
+.grade-card__metric dt {
+  margin-block-end: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.grade-card__metric dd {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.grade-card__subheading {
+  margin-block-end: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+}
+
+.grade-card__uses {
+  margin-block-end: var(--space-4);
+  color: var(--color-muted);
+}
+
+.grade-card__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.grade-card__sizes li {
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: calc(var(--radius) / 2);
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+}
+
+.grade-card > .btn-primary {
+  align-self: flex-start;
+  margin-block-start: auto;
+}
+
+.products-grade__table {
+  margin-block-start: var(--space-8);
+}
+
+.products-grade__disclaimer {
+  margin-block-start: var(--space-4);
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.products-grade__spec {
+  align-items: start;
+}
+
+.products-grade__spec .info-card {
+  padding: var(--card-padding);
+}
+
+@media (min-width: 640px) {
+  .products-grade__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grade__hero {
+    min-height: 360px;
+  }
+
+  .products-grade__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grade-card,
+  .grade-tab {
+    transition: none;
+  }
+}

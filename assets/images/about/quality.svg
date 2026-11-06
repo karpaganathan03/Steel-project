@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Steel quality inspection</title>
+  <desc id="desc">Illustration of a checked steel plate and a quality certificate.</desc>
+  <rect width="900" height="600" fill="#E9EDF1"/>
+  <path fill="#6B7885" d="M95 130h710v320H95z"/>
+  <path fill="#AAB5BF" d="M145 178h610v222H145z"/>
+  <circle cx="450" cy="290" r="95" fill="#F26A1B"/>
+  <path d="m405 288 32 32 66-72" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/>
+  <path fill="#0F1E2E" d="M205 480h490v38H205z"/>
+  <path fill="#1C242C" d="M275 520h350v18H275z"/>
+</svg>

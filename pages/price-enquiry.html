@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Share your steel requirements and save an enquiry locally in your browser.">
+  <meta name="theme-color" content="#0F1E2E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Price Enquiry | ForgeLine Steel">
+  <meta property="og:description" content="Tell us what you need for your steel project and request a supply enquiry.">
+  <title>Price Enquiry | ForgeLine Steel</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/price-enquiry.css">
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/theme.js"></script>
+  <script defer src="../assets/js/direction.js"></script>
+  <script defer src="../assets/js/nav.js"></script>
+  <script defer src="../assets/js/scroll-progress.js"></script>
+  <script defer src="../assets/js/data.js"></script>
+  <script defer src="../assets/js/forms.js"></script>
+</head>
+<body id="top" data-base="..">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main-content">
+    <nav class="container price-enquiry__breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="../index.html" data-i18n="navHome">Home</a></li>
+        <li aria-current="page" data-i18n="navEnquiry">Price Enquiry</li>
+      </ol>
+    </nav>
+
+    <section class="page-hero price-enquiry__hero" aria-labelledby="page-title">
+      <div class="container page-hero__content">
+        <span class="eyebrow page-hero__eyebrow" data-i18n="enquiryEyebrow">Price enquiry</span>
+        <h1 id="page-title" data-i18n="enquiryPageTitle">Let’s put a quote together.</h1>
+        <p data-i18n="enquiryPageDescription">Tell us what you need and where it needs to go. Our team can check product availability and prepare a tailored quote.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="enquiry-form-heading">
+      <div class="container price-enquiry__layout">
+        <div class="price-enquiry__form-column">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow" data-i18n="enquirySectionEyebrow">Your project details</span>
+            <h2 id="enquiry-form-heading" data-i18n="enquiryFormHeading">Request pricing</h2>
+            <p data-i18n="enquiryFormDescription">Share your requirements. We will save this enquiry only in this browser; nothing is sent to a server.</p>
+          </div>
+
+          <form class="form-grid price-enquiry__form" data-enquiry-form novalidate>
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="enquiry-name" data-i18n="enquiryNameLabel">Your name *</label>
+                <input class="field" id="enquiry-name" name="name" autocomplete="name" maxlength="80" required data-validate="name" aria-describedby="enquiry-name-error">
+                <p class="field-message field-message--error" id="enquiry-name-error" data-field-error="name" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="enquiry-phone" data-i18n="enquiryPhoneLabel">Phone number *</label>
+                <input class="field" id="enquiry-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" required data-validate="phone" aria-describedby="enquiry-phone-error">
+                <p class="field-message field-message--error" id="enquiry-phone-error" data-field-error="phone" hidden></p>
+              </div>
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="enquiry-email" data-i18n="enquiryEmailLabel">Email address *</label>
+                <input class="field" id="enquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required data-validate="email" aria-describedby="enquiry-email-error">
+                <p class="field-message field-message--error" id="enquiry-email-error" data-field-error="email" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="enquiry-company" data-i18n="enquiryCompanyLabel">Company</label>
+                <input class="field" id="enquiry-company" name="company" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="enquiry-city" data-i18n="enquiryCityLabel">City</label>
+                <input class="field" id="enquiry-city" name="city" autocomplete="address-level2">
+              </div>
+              <div class="form-field">
+                <label for="enquiry-product" data-i18n="enquiryProductLabel">Product *</label>
+                <select class="field" id="enquiry-product" name="product" required data-validate="product" aria-describedby="enquiry-product-error">
+                  <option value="" data-i18n="enquiryProductPlaceholder">Select a product</option>
+                  <option value="TMT bars" data-i18n="enquiryProductTmt">TMT bars</option>
+                  <option value="Structural steel sections" data-i18n="enquiryProductSections">Structural steel sections</option>
+                  <option value="Plates and sheets" data-i18n="enquiryProductPlates">Plates and sheets</option>
+                  <option value="Binding wire" data-i18n="enquiryProductWire">Binding wire</option>
+                  <option value="Other / multiple items" data-i18n="enquiryProductOther">Other / multiple items</option>
+                </select>
+                <p class="field-message field-message--error" id="enquiry-product-error" data-field-error="product" hidden></p>
+              </div>
+            </div>
+
+            <div class="form-grid form-grid--2">
+              <div class="form-field">
+                <label for="enquiry-grade" data-i18n="enquiryGradeLabel">Grade</label>
+                <select class="field" id="enquiry-grade" name="grade">
+                  <option value="" data-i18n="enquiryGradePlaceholder">Select a grade</option>
+                  <option>Fe 415</option>
+                  <option>Fe 500</option>
+                  <option>Fe 500D</option>
+                  <option>Fe 550</option>
+                  <option>Fe 550D</option>
+                  <option>Fe 600</option>
+                  <option value="Other / as specified" data-i18n="enquiryGradeOther">Other / as specified</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="enquiry-quantity" data-i18n="enquiryQuantityLabel">Approximate quantity (tonnes) *</label>
+                <input class="field" id="enquiry-quantity" name="quantity" type="number" min="0" step="any" inputmode="decimal" required data-validate="quantity" aria-describedby="enquiry-quantity-error">
+                <p class="field-message field-message--error" id="enquiry-quantity-error" data-field-error="quantity" hidden></p>
+              </div>
+            </div>
+
+            <fieldset class="form-field size-choice-group" data-size-group aria-describedby="enquiry-size-help enquiry-size-error">
+              <legend data-i18n="enquirySizeLabel">Sizes *</legend>
+              <p class="field-message" id="enquiry-size-help" data-i18n="enquirySizeHelp">Select one or more bar sizes.</p>
+              <div class="size-choice-list">
+                <label class="size-choice"><input type="checkbox" name="size" value="8 mm"><span>8 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="10 mm"><span>10 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="12 mm"><span>12 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="16 mm"><span>16 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="20 mm"><span>20 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="25 mm"><span>25 mm</span></label>
+                <label class="size-choice"><input type="checkbox" name="size" value="32 mm"><span>32 mm</span></label>
+              </div>
+              <p class="field-message field-message--error" id="enquiry-size-error" data-field-error="size" hidden></p>
+            </fieldset>
+
+            <div class="form-field">
+              <label for="enquiry-date" data-i18n="enquiryDateLabel">Preferred delivery date (IST)</label>
+              <input class="field" id="enquiry-date" name="deliveryDate" type="date" data-validate="deliveryDate" aria-describedby="enquiry-date-error">
+              <p class="field-message field-message--error" id="enquiry-date-error" data-field-error="deliveryDate" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="enquiry-message" data-i18n="enquiryMessageLabel">Additional details</label>
+              <textarea class="field" id="enquiry-message" name="message" data-i18n-placeholder="enquiryMessagePlaceholder" placeholder="Share project requirements or delivery notes."></textarea>
+            </div>
+
+            <div class="form-field">
+              <label class="checkbox enquiry-consent" for="enquiry-consent">
+                <input id="enquiry-consent" name="consent" type="checkbox" value="yes" required data-validate="consent" aria-describedby="enquiry-consent-error">
+                <span data-i18n="enquiryConsent">I agree to save these enquiry details in this browser for this demo.</span>
+              </label>
+              <p class="field-message field-message--error" id="enquiry-consent-error" data-field-error="consent" hidden></p>
+            </div>
+
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            <button class="btn-primary btn-primary--lg enquiry-submit" type="submit">
+              <span data-submit-label data-i18n="enquirySubmit">Submit enquiry</span>
+              <span class="form-spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+
+          <div class="enquiry-success" data-enquiry-success role="status" aria-live="polite" hidden>
+            <span class="enquiry-success__mark" aria-hidden="true">✓</span>
+            <h3 data-i18n="enquirySuccessTitle">Enquiry saved in this browser</h3>
+            <p data-i18n="enquirySuccessText">This demo has not sent your details to ForgeLine Steel. Contact the team directly to request a quote.</p>
+          </div>
+        </div>
+
+        <aside class="price-enquiry__aside" aria-labelledby="enquiry-process-heading">
+          <article class="enquiry-aside-card">
+            <h2 id="enquiry-process-heading" data-i18n="enquiryProcessHeading">What happens next</h2>
+            <ol class="enquiry-steps">
+              <li><span class="enquiry-steps__number" aria-hidden="true">1</span><div><h3 data-i18n="enquiryStepOneTitle">Tell us what you need</h3><p data-i18n="enquiryStepOneText">Add product, grade, sizes and approximate quantity.</p></div></li>
+              <li><span class="enquiry-steps__number" aria-hidden="true">2</span><div><h3 data-i18n="enquiryStepTwoTitle">We review your details</h3><p data-i18n="enquiryStepTwoText">Our team can use your contact details to follow up outside this demo website.</p></div></li>
+              <li><span class="enquiry-steps__number" aria-hidden="true">3</span><div><h3 data-i18n="enquiryStepThreeTitle">Confirm supply options</h3><p data-i18n="enquiryStepThreeText">Verify price, specification, delivery and availability before placing an order.</p></div></li>
+            </ol>
+          </article>
+          <article class="enquiry-aside-card enquiry-aside-card--contact">
+            <h2 data-i18n="enquiryHelplineTitle">Helpline</h2>
+            <a href="tel:+919874561230">+91 98745 61230</a>
+            <p class="enquiry-placeholder-note" data-i18n="enquiryHelplinePlaceholder">Replace this sample number before publishing.</p>
+          </article>
+          <article class="enquiry-aside-card">
+            <h2 data-i18n="enquiryWorkingHoursTitle">Working hours</h2>
+            <p data-i18n="enquiryWorkingHours">Monday–Saturday, 9:00 AM–6:00 PM (local time).</p>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

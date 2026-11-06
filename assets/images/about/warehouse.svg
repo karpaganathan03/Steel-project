@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Steel distribution warehouse</title>
+  <desc id="desc">Illustration of a steel warehouse with goods ready for dispatch.</desc>
+  <rect width="900" height="600" fill="#E9EDF1"/>
+  <path fill="#293744" d="M60 280 450 78l390 202v260H60z"/>
+  <path fill="#6B7885" d="M112 288 450 116l338 172v42H112z"/>
+  <path fill="#1C242C" d="M135 330h630v210H135z"/>
+  <path fill="#0F1E2E" d="M170 365h240v175H170zm320 0h240v175H490z"/>
+  <path fill="#F26A1B" d="M60 520h780v24H60z"/>
+  <g fill="#AAB5BF">
+    <rect x="198" y="406" width="184" height="24" rx="4"/>
+    <rect x="198" y="447" width="184" height="24" rx="4"/>
+    <rect x="518" y="406" width="184" height="24" rx="4"/>
+    <rect x="518" y="447" width="184" height="24" rx="4"/>
+  </g>
+</svg>

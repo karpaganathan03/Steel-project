@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Bundled steel reinforcement bars</title>
+  <rect width="640" height="420" fill="#E9EDF1"/>
+  <g fill="none" stroke="#6B7885" stroke-linecap="round" stroke-width="18">
+    <path d="M90 95h450M65 145h475M80 195h470M60 245h500M95 295h450"/>
+    <path d="m155 76 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38"/>
+    <path d="m137 126 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38"/>
+    <path d="m160 176 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38m50-38 22 38"/>
+  </g>
+  <path fill="#F26A1B" d="M82 330h476v14H82z"/>
+  <path fill="#0F1E2E" d="M95 355h450v28H95z"/>
+</svg>

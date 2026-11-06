@@ -1,0 +1,267 @@
+.price-enquiry__breadcrumb {
+  padding-block: var(--space-3);
+}
+
+.price-enquiry__hero {
+  min-height: 320px;
+}
+
+.price-enquiry__hero .page-hero__content {
+  padding-block: var(--space-8);
+}
+
+.price-enquiry__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-8);
+}
+
+.price-enquiry__form-column {
+  min-width: 0;
+}
+
+.price-enquiry__form {
+  padding: var(--card-padding);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-card);
+}
+
+.price-enquiry__form .form-grid--2 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.price-enquiry__form .form-field {
+  min-width: 0;
+}
+
+.price-enquiry__form .form-field--error .field,
+.price-enquiry__form .field[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.size-choice-group {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.size-choice-group legend {
+  margin-block-end: var(--space-2);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.size-choice-group[aria-invalid="true"] .size-choice-list {
+  outline: 2px solid var(--color-error);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+.size-choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.size-choice {
+  position: relative;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.size-choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.size-choice span {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+  font-size: var(--font-size-sm);
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.size-choice input:checked + span {
+  border-color: var(--color-navy);
+  color: var(--color-inverse);
+  background: var(--color-navy);
+}
+
+.size-choice input:focus-visible + span {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.enquiry-consent {
+  align-items: flex-start;
+}
+
+.enquiry-consent input {
+  flex: 0 0 20px;
+  margin-block-start: var(--space-1);
+}
+
+.enquiry-consent[aria-invalid="true"] {
+  color: var(--color-error-text);
+}
+
+.enquiry-submit {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.enquiry-submit:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
+.price-enquiry__aside {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.enquiry-aside-card {
+  padding: var(--card-padding);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-card);
+}
+
+.enquiry-aside-card h2 {
+  margin-block-end: var(--space-4);
+  font-size: var(--font-size-xl);
+}
+
+.enquiry-steps {
+  display: grid;
+  gap: var(--space-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.enquiry-steps li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.enquiry-steps__number {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-inverse);
+  background: var(--color-navy);
+  font-weight: 700;
+}
+
+.enquiry-steps h3 {
+  margin-block-end: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+}
+
+.enquiry-steps p,
+.enquiry-aside-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.enquiry-aside-card--contact a {
+  color: var(--color-orange-text);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enquiry-aside-card--contact .enquiry-placeholder-note {
+  margin-block-start: var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.enquiry-success {
+  padding: var(--space-8);
+  border: var(--border-width) solid var(--color-success);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-card);
+}
+
+.enquiry-success[hidden] {
+  display: none;
+}
+
+.enquiry-success__mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-block-end: var(--space-4);
+  border-radius: 50%;
+  color: var(--color-success-text);
+  background: var(--color-surface);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.enquiry-success h3 {
+  margin-block-end: var(--space-2);
+}
+
+.enquiry-success p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+@media (min-width: 768px) {
+  .price-enquiry__form .form-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .price-enquiry__hero {
+    min-height: 360px;
+  }
+
+  .price-enquiry__layout {
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+    gap: var(--space-8);
+  }
+
+  .price-enquiry__aside {
+    position: sticky;
+    inset-block-start: calc(var(--header-height) + var(--space-4));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .size-choice span {
+    transition: none;
+  }
+}

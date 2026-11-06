@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare common TMT bar diameters with indicative weight references, typical applications and enquiry links.">
+  <meta name="theme-color" content="#0F1E2E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TMT Bar Sizes | ForgeLine Steel">
+  <meta property="og:description" content="Browse common TMT bar sizes and check current availability for your project.">
+  <title>TMT Bar Sizes | ForgeLine Steel</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="stylesheet" href="../assets/css/products-size.css">
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/theme.js"></script>
+  <script defer src="../assets/js/direction.js"></script>
+  <script defer src="../assets/js/nav.js"></script>
+  <script defer src="../assets/js/scroll-progress.js"></script>
+  <script defer src="../assets/js/data.js"></script>
+  <script defer src="../assets/js/products.js"></script>
+</head>
+<body id="top" data-base="..">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main-content">
+    <nav class="container products-size__breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="../index.html" data-i18n="navHome">Home</a></li>
+        <li><a href="products.html" data-i18n="navProducts">Products</a></li>
+        <li aria-current="page" data-i18n="sizePageEyebrow">TMT bar sizes</li>
+      </ol>
+    </nav>
+
+    <section class="page-hero products-size__hero" aria-labelledby="page-title">
+      <div class="container page-hero__content">
+        <span class="eyebrow page-hero__eyebrow" data-i18n="sizePageEyebrow">TMT bar sizes</span>
+        <h1 id="page-title" data-i18n="sizePageTitle">The right size for the job.</h1>
+        <p data-i18n="sizePageDescription">See common reinforcement bar sizes and tell us what your drawings call for. Availability is confirmed when you enquire.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="size-selector-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-heading__eyebrow" data-i18n="sizeBrowseEyebrow">Browse by diameter</span>
+          <h2 id="size-selector-heading" data-i18n="sizeSelectorHeading">Choose a bar diameter</h2>
+          <p data-i18n="sizeSelectorDescription">Select a nominal bar size to view indicative weight and typical applications. Confirm the required size against your approved project drawings.</p>
+        </div>
+
+        <div class="size-tabs" role="tablist" aria-label="Select a TMT bar diameter" data-i18n-aria-label="sizeTabsLabel">
+          <button class="size-tab" id="size-tab-8" type="button" role="tab" aria-selected="true" aria-controls="size-panel" tabindex="0" data-size-filter="8 mm">8 mm</button>
+          <button class="size-tab" id="size-tab-10" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="10 mm">10 mm</button>
+          <button class="size-tab" id="size-tab-12" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="12 mm">12 mm</button>
+          <button class="size-tab" id="size-tab-16" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="16 mm">16 mm</button>
+          <button class="size-tab" id="size-tab-20" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="20 mm">20 mm</button>
+          <button class="size-tab" id="size-tab-25" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="25 mm">25 mm</button>
+          <button class="size-tab" id="size-tab-32" type="button" role="tab" aria-selected="false" aria-controls="size-panel" tabindex="-1" data-size-filter="32 mm">32 mm</button>
+        </div>
+        <p class="products-size__result-count" data-size-result-count aria-live="polite"></p>
+        <div class="products-size__panel" id="size-panel" role="tabpanel" aria-labelledby="size-tab-8" data-size-panel></div>
+      </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="size-table-heading">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-heading__eyebrow" data-i18n="sizeTableEyebrow">Size reference</span>
+          <h2 id="size-table-heading" data-i18n="sizeTableHeading">Compare TMT bar sizes</h2>
+          <p data-i18n="sizeTableDescription">Indicative mass and piece counts use nominal diameters and a 12 m reference length.</p>
+        </div>
+        <div class="table-scroll products-size__table" tabindex="0" role="region" aria-label="TMT bar size and theoretical weight comparison" data-i18n-aria-label="sizeTableLabel">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="sizeTableDiameter">Nominal diameter</th>
+                <th scope="col" data-i18n="sizeTableWeight">Approx. mass per metre</th>
+                <th scope="col" data-i18n="sizeTableBars">Approx. 12 m bars per tonne</th>
+                <th scope="col" data-i18n="sizeTableLength">Reference length</th>
+              </tr>
+            </thead>
+            <tbody data-size-comparison></tbody>
+          </table>
+        </div>
+        <p class="products-size__note" data-i18n="sizeTableNote">Theoretical mass is estimated using d²/162 kg/m. Bar counts are calculated from that estimate and a 12 m length, then rounded to whole bars. Actual mass and supplied lengths can vary; confirm product documentation and order quantities with the supplier.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="size-grade-heading">
+      <div class="container products-size__grade-link">
+        <div>
+          <span class="section-heading__eyebrow" data-i18n="navGrade">By Grade</span>
+          <h2 id="size-grade-heading" data-i18n="sizeGradeHeading">Need to confirm the required steel grade?</h2>
+          <p data-i18n="sizeGradeDescription">Review the grade guide and verify your project specification with the responsible engineer before ordering.</p>
+        </div>
+        <a class="btn-outline" href="products-grade.html">
+          <span data-i18n="sizeGradeButton">Explore TMT grades</span>
+          <span class="icon-dir" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="size-cta-heading">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 id="size-cta-heading" data-i18n="productsHubCtaHeading">Have a material list ready?</h2>
+          <p data-i18n="productsHubCtaDescription">Send your product, grade, size, quantity and delivery details for a tailored availability check.</p>
+        </div>
+        <a class="btn-primary btn-primary--lg" href="price-enquiry.html">
+          <span data-i18n="productsHubCtaButton">Request a quote</span>
+          <span class="icon-dir" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

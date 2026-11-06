@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Structural steel sections</title>
+  <rect width="640" height="420" fill="#E9EDF1"/>
+  <g fill="#6B7885">
+    <path d="M88 85h180v36h-72v192h-36V121H88z"/>
+    <path d="M306 85h190v36h-77v192h-36V121h-77z"/>
+    <path d="M122 338h378v22H122z"/>
+  </g>
+  <path fill="#F26A1B" d="M87 73h411v12H87z"/>
+  <path fill="#0F1E2E" d="M88 313h408v16H88z"/>
+</svg>

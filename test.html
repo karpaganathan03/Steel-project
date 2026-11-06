@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Integration checks for ForgeLine Steel shared site modules.">
+  <title>Site Integration Test | ForgeLine Steel</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/theme.js"></script>
+  <script defer src="assets/js/direction.js"></script>
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/scroll-progress.js"></script>
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/test.js"></script>
+</head>
+<body id="top" data-base=".">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="site-header"></div>
+  <main id="main-content" class="container section">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">Prompt 3 integration</span>
+      <h1>Shared site module checks</h1>
+      <p>These checks exercise the injected shell, saved theme, direction-only layout switching, navigation, and scroll progress. Resize to a mobile width to include drawer and focus-trap checks.</p>
+    </div>
+    <section class="feature-card" aria-labelledby="test-results-heading">
+      <h2 id="test-results-heading">Results</h2>
+      <p id="test-summary" role="status" aria-live="polite">Running checks…</p>
+      <ol id="test-results"></ol>
+    </section>
+    <section class="section" aria-label="English content preview">
+      <span class="eyebrow" data-i18n="homeEyebrow">Your trusted steel supply partner</span>
+      <h2><span data-i18n="homeHeadlineStart">Steel you can</span> <span data-i18n="homeHeadlineAccent">build on.</span></h2>
+      <a class="btn-primary" href="pages/price-enquiry.html" data-i18n="quoteCta">Get Quote</a>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>

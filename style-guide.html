@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ForgeLine Steel design system preview in light and dark themes.">
+  <meta name="theme-color" content="#0F1E2E">
+  <title>Design System | ForgeLine Steel</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <script defer src="assets/js/style-guide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content" class="style-guide container container--wide">
+    <header class="style-guide__intro section">
+      <span class="eyebrow">ForgeLine Steel / UI foundations</span>
+      <h1>Design system</h1>
+      <p>Every component is shown in light and dark themes using the site's left-to-right layout. Focus controls to inspect the keyboard ring; resize to see responsive states.</p>
+      <nav class="style-guide__jump" aria-label="Design system combinations">
+        <a class="btn-outline btn-outline--sm" href="#ltr-light">LTR / Light</a>
+        <a class="btn-outline btn-outline--sm" href="#ltr-dark">LTR / Dark</a>
+      </nav>
+    </header>
+    <div id="style-panels"></div>
+  </main>
+
+  <template id="style-panel-template">
+    <section class="style-panel" aria-labelledby="combination-title">
+      <header class="style-panel__head">
+        <div><span class="eyebrow">Combination</span><h2 id="combination-title"></h2></div>
+        <code></code>
+      </header>
+      <section class="style-guide__section">
+        <h3>Type, links &amp; section headings</h3>
+        <div class="section__head"><span class="section__eyebrow">Eyebrow / category</span><h2 class="section__title">Section title with a steel underline</h2><span class="steel-bar" aria-hidden="true"></span><p class="section__description">Concise supporting copy with a comfortable reading width and consistent alignment.</p></div>
+        <div class="style-guide__type"><h1>Heading one</h1><h2>Heading two</h2><h3>Heading three</h3><h4>Heading four</h4><h5>Heading five</h5><h6>Heading six</h6><p>Body paragraph with a <a href="#main-content">text link</a> and muted supporting text.</p><ul><li>Unordered list item</li><li>Another item</li></ul></div>
+        <div class="style-guide__grid-demo grid grid--12"><div class="grid__span-6">12-column helper · half width</div><div class="grid__span-3">Quarter width</div><div class="grid__span-3">Quarter width</div></div>
+        <div class="style-guide__grid-demo grid grid--8"><div class="grid__span-4">8-column helper · half width</div><div class="grid__span-4">Half width</div></div>
+        <div class="style-guide__grid-demo grid grid--4"><div class="grid__span-2">4-column helper · half width</div><div class="grid__span-2">Half width</div></div>
+      </section>
+      <section class="style-guide__section">
+        <h3>Hero layouts &amp; calls to action</h3>
+        <section class="hero style-guide__hero" aria-label="Hero preview"><div class="hero__content"><span class="eyebrow">Project-ready supply</span><h1>Steel you can <span class="hero__title-accent">build on.</span></h1><p>Hero content stays readable over a darkened local image.</p><div class="hero__actions"><a class="btn-primary btn-primary--lg" href="#main-content">Explore products <span class="icon-dir" aria-hidden="true">→</span></a><a class="btn-outline btn-outline--lg" href="#main-content">Request a quote</a></div></div></section>
+        <section class="page-hero style-guide__page-hero" aria-label="Page hero preview"><div class="page-hero__content"><span class="eyebrow page-hero__eyebrow">Product range</span><h1>Page hero heading</h1><p>Secondary page title, description and overlay treatment.</p></div></section>
+        <section class="cta-band"><div class="cta-band__inner"><div><h2>Need a project quote?</h2><p>Share your requirements with the team.</p></div><a class="btn-primary btn-primary--lg" href="#main-content">Get a quote <span class="icon-dir" aria-hidden="true">→</span></a></div></section>
+      </section>
+      <section class="style-guide__section">
+        <h3>Buttons &amp; icon buttons</h3>
+        <div class="style-guide__stack">
+          <div class="style-guide__row"><button class="btn-primary btn-primary--sm" type="button">Primary small</button><button class="btn-primary" type="button">Primary medium</button><button class="btn-primary btn-primary--lg" type="button">Primary large</button><button class="btn-primary" type="button" disabled>Disabled</button></div>
+          <div class="style-guide__row"><button class="btn-outline btn-outline--sm" type="button">Outline small</button><button class="btn-outline" type="button">Outline medium</button><button class="btn-outline btn-outline--lg" type="button">Outline large</button></div>
+          <div class="style-guide__row"><button class="btn-ghost btn-ghost--sm" type="button">Ghost small</button><button class="btn-ghost" type="button">Ghost medium</button><button class="btn-ghost btn-ghost--lg" type="button">Ghost large</button><button class="icon-button" type="button" aria-label="Favorite">♡</button></div>
+        </div>
+      </section>
+      <section class="style-guide__section">
+        <h3>Header, navigation &amp; breadcrumb</h3>
+        <header class="site-header style-guide__header"><div class="site-header__inner">
+          <a class="brand" href="#main-content"><img src="assets/icons/favicon.svg" alt="" width="38" height="38"><span>FORGELINE<span class="brand__tag">Steel &amp; TMT</span></span></a>
+          <button class="icon-button nav-toggle" type="button" aria-expanded="true" aria-label="Menu">☰</button>
+          <nav class="site-nav is-open" aria-label="Preview navigation"><ul class="site-nav__links">
+            <li><a class="site-nav__link" href="#main-content" aria-current="page">Home</a></li>
+            <li class="is-open"><a class="site-nav__link nav-dropdown__toggle" href="#main-content">Products</a><ul class="site-nav__dropdown"><li><a class="site-nav__link" href="#main-content">TMT bars</a></li><li><a class="site-nav__link" href="#main-content">Steel sections</a></li></ul></li>
+            <li><a class="site-nav__link" href="#main-content">About</a></li>
+          </ul><div class="site-nav__actions"><button class="btn-ghost btn-ghost--sm" type="button">◐ Theme</button><a class="btn-primary btn-primary--sm" href="#main-content">Get a quote</a></div></nav>
+        </div></header>
+        <ol class="breadcrumb" aria-label="Breadcrumb"><li><a href="#main-content">Home</a></li><li><a href="#main-content">Products</a></li><li aria-current="page">TMT bars</li></ol>
+        <aside class="style-guide__drawer-preview"><span class="eyebrow">Mobile drawer preview</span><nav class="site-nav is-open" aria-label="Mobile drawer preview"><ul class="site-nav__links"><li><a class="site-nav__link" href="#main-content">Home</a></li><li><a class="site-nav__link" href="#main-content">Products</a></li><li><a class="site-nav__link" href="#main-content">Grades</a></li></ul><a class="btn-primary" href="#main-content">Get a quote</a></nav></aside>
+      </section>
+      <section class="style-guide__section">
+        <h3>Cards, badges, chips, stats &amp; testimonials</h3>
+        <div class="grid--cards-3 grid--equal">
+          <article class="product-card"><div class="product-card__image"><img src="assets/images/products/rebar.svg" alt="Steel reinforcement bars" loading="lazy"></div><div class="product-card__body"><span class="product-card__meta">TMT / Reinforcement</span><h4>Product card</h4><p>Quality steel products with clear specifications and delivery support.</p><a class="text-link" href="#main-content">Explore product <span class="icon-dir" aria-hidden="true">→</span></a></div></article>
+          <article class="feature-card"><div class="feature-card__icon" aria-hidden="true">✓</div><span class="badge badge--success">In stock</span><h4>Feature card</h4><p>Card for service highlights and key customer benefits.</p><div class="style-guide__row"><span class="chip">Fe 500D</span><span class="chip is-active">12 mm</span></div></article>
+          <article class="info-card style-guide__card-pad"><span class="product-card__meta">Partner</span><div class="brand-card">Brand card</div><div class="stat"><strong>500+</strong><span>Stat card / projects supported</span></div></article>
+        </div>
+        <div class="style-guide__row"><span class="badge">Standard badge</span><span class="badge badge--success">Success</span><span class="badge badge--error">Unavailable</span><span class="chip">Fe 500D <button class="btn-ghost btn-ghost--sm" type="button" aria-label="Remove grade">×</button></span><span class="chip is-active">Selected chip</span></div>
+        <figure class="testimonial"><blockquote>“Clear communication and dependable supply made planning our material order easier.”</blockquote><figcaption>Testimonial card · Project customer</figcaption></figure>
+      </section>
+      <section class="style-guide__section">
+        <h3>Tabs, accordion &amp; table</h3>
+        <div class="tabs" role="tablist" aria-label="Product information"><button class="tab is-active" role="tab" aria-selected="true" type="button">Overview</button><button class="tab" role="tab" aria-selected="false" type="button">Specifications</button><button class="tab" role="tab" aria-selected="false" type="button">Delivery</button></div>
+        <details class="accordion" open><summary>How do I request current pricing?</summary><div class="accordion__body"><p>Share the product, grade, size, quantity and delivery location with our team.</p></div></details>
+        <details class="accordion"><summary>Can you confirm product availability?</summary><div class="accordion__body"><p>Availability is confirmed for each specific enquiry.</p></div></details>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Product</th><th scope="col">Grade</th><th scope="col">Size</th><th scope="col">Availability</th></tr></thead><tbody><tr><th scope="row">TMT bar</th><td>Fe 500D</td><td>12 mm</td><td>Check with team</td></tr><tr><th scope="row">TMT bar</th><td>Fe 550</td><td>16 mm</td><td>Check with team</td></tr></tbody></table></div>
+      </section>
+      <section class="style-guide__section">
+        <h3>Forms &amp; states</h3>
+        <form class="form-grid">
+          <div class="form-grid form-grid--2"><div class="form-field"><label for="preview-name">Name</label><input class="field" id="preview-name" placeholder="Your name"></div><div class="form-field"><label for="preview-grade">Grade</label><select class="field" id="preview-grade"><option>Select a grade</option><option>Fe 500D</option></select></div></div>
+          <div class="form-field form-field--error"><label for="preview-error">Error state</label><input class="field" id="preview-error" aria-invalid="true" value="Please check this field"><span class="field-message field-message--error">Enter a valid value.</span></div>
+          <div class="form-field form-field--success"><label for="preview-success">Success state</label><input class="field" id="preview-success" value="Available"><span class="field-message field-message--success">Looks good.</span></div>
+          <label class="checkbox"><input type="checkbox"> I agree to be contacted about my enquiry.</label>
+          <div class="style-guide__row"><span class="chip">Fe 500D</span><span class="chip is-active">16 mm</span><span class="chip">Delivery</span></div>
+        </form>
+      </section>
+      <section class="style-guide__section">
+        <h3>Footer, back-to-top, progress &amp; toast</h3>
+        <footer class="site-footer style-guide__footer"><div class="site-footer__grid">
+          <div><a class="brand" href="#main-content"><img src="assets/icons/favicon.svg" alt=""><span>FORGELINE<span class="brand__tag">Steel &amp; TMT</span></span></a><p>Steel you can build on.</p></div>
+          <div><h4 class="site-footer__title">Explore</h4><ul class="site-footer__links"><li><a href="#main-content">Products</a></li><li><a href="#main-content">TMT grades</a></li></ul></div>
+          <div><h4 class="site-footer__title">Contact</h4><p>sales@example.com</p><div class="social-links"><a href="#main-content" aria-label="LinkedIn">in</a><a href="#main-content" aria-label="Instagram">◎</a></div></div>
+        </div><div class="site-footer__bottom"><p>© 2026 ForgeLine Steel</p><a class="back-to-top" href="#main-content" aria-label="Back to top">↑</a></div></footer>
+        <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+        <div class="toast" role="status">Your enquiry has been prepared.</div>
+      </section>
+    </section>
+  </template>
+</body>
+</html>
