@@ -3,7 +3,7 @@
 }
 
 .products-grade__hero {
-  min-height: 320px;
+  min-height: auto;
 }
 
 .products-grade__hero .page-hero__content {
@@ -186,7 +186,7 @@
 
 @media (min-width: 1024px) {
   .products-grade__hero {
-    min-height: 360px;
+    min-height: auto;
   }
 
   .products-grade__grid {

@@ -3,7 +3,7 @@
 }
 
 .contact__hero {
-  min-height: 320px;
+  min-height: auto;
 }
 
 .contact__hero .page-hero__content {
@@ -261,7 +261,7 @@
 
 @media (min-width: 768px) {
   .contact__hero {
-    min-height: 360px;
+    min-height: auto;
   }
 
   .contact__main-grid {

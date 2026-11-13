@@ -3,7 +3,7 @@
 }
 
 .price-enquiry__hero {
-  min-height: 320px;
+  min-height: auto;
 }
 
 .price-enquiry__hero .page-hero__content {
@@ -246,7 +246,7 @@
 
 @media (min-width: 1024px) {
   .price-enquiry__hero {
-    min-height: 360px;
+    min-height: auto;
   }
 
   .price-enquiry__layout {

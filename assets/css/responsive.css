@@ -67,7 +67,11 @@
 }
 
 .hero {
-  min-height: 620px;
+  min-height: auto;
+}
+
+.hero__arrow {
+  display: none;
 }
 
 .hero__actions {
@@ -283,7 +287,11 @@
   }
 
   .hero {
-    min-height: min(800px, calc(100svh - var(--header-height)));
+    min-height: auto;
+  }
+
+  .hero__arrow {
+    display: inline-flex;
   }
 
   .hero__actions {
@@ -366,6 +374,22 @@
     padding: var(--space-2);
     border: var(--border-width) solid var(--color-border);
     box-shadow: var(--shadow-raised);
+  }
+
+  /* Desktop: the Products link itself opens the menu on hover or focus,
+     so the arrow button is hidden. It stays in the DOM for the mobile drawer. */
+  .site-nav__product-row .nav-dropdown__toggle {
+    display: none;
+  }
+
+  /* Invisible strip that bridges the gap between the link and the panel,
+     so moving the pointer down does not close the menu. */
+  .site-nav__dropdown::before {
+    position: absolute;
+    inset-block: calc(-1 * var(--space-2)) auto;
+    inset-inline: 0;
+    height: var(--space-2);
+    content: "";
   }
 
   .site-nav__item--dropdown:hover > .site-nav__dropdown,

@@ -66,19 +66,20 @@
       '<a class="brand" href="' + localUrl("index.html") + '">' +
       '<img src="' + localUrl("assets/icons/favicon.svg") + '" alt="" width="38" height="38">' +
       '<span>' + data.brand.logo + '<span class="brand__tag">' + data.brand.descriptor + "</span></span></a>" +
-      '<button class="icon-button nav-toggle" type="button" aria-label="' + data.i18n.en.openMenu + '" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>' +
-      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button>' +
       '<nav class="site-nav" id="primary-navigation" aria-label="Main navigation" aria-hidden="true" inert>' +
       '<ul class="site-nav__links">' + renderNavigation(data) + "</ul>" +
       '<div class="site-nav__actions">' +
-      '<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-pressed="false">' +
+      '<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle theme">' +
       '<svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>' +
       '<svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.8 8.8 0 1 0 20.5 15.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></button>' +
+      '<button class="icon-button direction-toggle" type="button" data-direction-toggle aria-pressed="false" aria-label="Switch to right-to-left layout" title="Switch layout direction">' +
+      '<svg class="icon-dir" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>' +
+      '<span data-direction-label>LTR</span></button>' +
       '<a class="btn-primary btn-primary--sm header-quote" href="' + pageUrl("price-enquiry.html") + '"><span data-i18n="quoteCta">Get Quote</span></a>' +
       "</div></nav>" +
-      '<button class="icon-button direction-toggle" type="button" data-direction-toggle aria-pressed="false" aria-label="Switch to right-to-left layout">' +
-      '<svg class="icon-dir" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>' +
-      '<span data-direction-label>LTR</span></button></div></header>' +
+      '<button class="icon-button nav-toggle" type="button" aria-label="' + data.i18n.en.openMenu + '" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button>' +
+      "</div></header>" +
       '<button class="nav-backdrop" type="button" tabindex="-1" aria-hidden="true" aria-label="' + data.i18n.en.closeMenuOverlay + '" data-nav-close></button>' +
       '<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" data-scroll-progress></div></div>';
   }
@@ -192,6 +193,17 @@
 
   window.SteelSiteNotify = showNotification;
   document.addEventListener("DOMContentLoaded", initModules, { once: true });
+
+  // Global image error fallback: replace broken images with placeholder
+  window.addEventListener("error", function (event) {
+    if (event.target && event.target.tagName === "IMG") {
+      const img = event.target;
+      if (!img.dataset.hasFallback) {
+        img.dataset.hasFallback = "true";
+        img.src = inPagesDirectory ? "../images/placeholder.jpg" : "images/placeholder.jpg";
+      }
+    }
+  }, true);
 
   root.dataset.siteBase = base;
 }());

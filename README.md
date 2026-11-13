@@ -60,11 +60,22 @@ The site uses local, scalable SVG illustrations rather than stock photography. T
 
 | File | Used for | Suggested replacement size |
 | --- | --- | --- |
-| `assets/images/hero/steel-coils.svg` | Primary steel-supply hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/Home page Hero 1.jpg` | Home Page 1 primary hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/Home page Hero 2.jpg` | Home Page 2 story hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/Product page Hero 1.jpg` | Products hub hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/Product page Hero 2.jpg` | Products grade and size hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/Price page Hero.jpg` | Price enquiry page hero artwork | 1920 × 1080 px (16:9) |
+| `assets/images/conatct  Hero.jpg` | Contact page hero artwork | 1920 × 1080 px (16:9) |
 | `assets/images/products/rebar.svg` | TMT bars and product cards | 800 × 600 px (4:3) |
 | `assets/images/products/sections.svg` | Structural steel and product cards | 800 × 600 px (4:3) |
 | `assets/images/about/quality.svg` | Grade-page quality illustration | 1000 × 800 px (5:4) |
-| `assets/images/about/warehouse.svg` | Home 2 company and dispatch illustrations | 1200 × 900 px (4:3) |
+| `assets/images/about/warehouse.svg` | Company and dispatch illustrations | 1200 × 900 px (4:3) |
+| `assets/images/Tata tiscon.jpg` | Tata Tiscon brand partner logo | 735 × 490 px |
+| `assets/images/JSW Neosteel.jpg` | JSW Neosteel brand partner logo | 736 × 736 px |
+| `assets/images/SAIL.jpg` | Steel Authority of India (SAIL) logo | 735 × 490 px |
+| `assets/images/Jindal Panther.jpg` | Jindal Panther brand partner logo | 735 × 490 px |
+| `assets/images/Kamdhenu.jpg` | Kamdhenu brand partner logo | 735 × 490 px |
+| `assets/images/Vizag Steel.jpg` | Vizag Steel (RINL) brand partner logo | 735 × 490 px |
 
 Home 2 also contains inline SVG illustrations in `pages/home-2.html`. The contact page embeds an interactive Google Map search for the configured address; verify the returned pin before publishing. Sample partner marks and testimonial quotes are illustrative and should be replaced with approved branding and verified customer quotes.
 

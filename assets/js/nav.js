@@ -159,21 +159,20 @@
         return;
       }
 
-      if (event.key === "Tab" && media.matches && navigation.classList.contains("is-open")) {
+      if (event.key === "Tab" && navigation.classList.contains("is-open")) {
         const items = focusableItems();
-        if (!items.length) {
-          event.preventDefault();
-          menuButton.focus();
-          return;
-        }
-        const first = items[0];
-        const last = items[items.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
+        if (items.length) {
+          const first = items[0];
+          const last = items[items.length - 1];
+          if (event.shiftKey) {
+            if (document.activeElement === first || items.indexOf(document.activeElement) <= 0) {
+              event.preventDefault();
+              last.focus();
+            }
+          } else {
+            event.preventDefault();
+            first.focus();
+          }
         }
       }
     });
