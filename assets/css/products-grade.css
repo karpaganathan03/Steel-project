@@ -200,3 +200,168 @@
     transition: none;
   }
 }
+
+/* ===== GRADE CARD LAYOUT FIXES ===== */
+.products-grade__grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
+  gap: var(--card-grid-gap);
+}
+
+.grade-card {
+  height: 100%;
+  border-color: transparent;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.grade-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-raised);
+}
+
+.grade-card__header h3 {
+  display: -webkit-box;
+  min-height: 2.4em;
+  overflow: hidden;
+  line-height: 1.2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grade-card {
+    transition: none;
+  }
+
+  .grade-card:hover {
+    transform: none;
+  }
+}
+
+/* ===== GRADE CATALOGUE GRID ALIGNMENT ===== */
+.products-grade__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: var(--card-grid-gap);
+}
+
+.grade-card {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  padding: var(--card-padding);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-card);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.grade-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light, var(--color-border));
+  box-shadow: var(--shadow-raised);
+}
+
+.grade-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: var(--space-2);
+  margin-block-end: var(--space-4);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.grade-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 240ms ease;
+}
+
+.grade-card:hover .grade-card__image img {
+  transform: scale(1.04);
+}
+
+.grade-card__header h3 {
+  flex: 1;
+  min-width: 0;
+  min-height: 1.2em;
+  overflow: hidden;
+  font-size: clamp(var(--font-size-sm), 1.25vw, var(--font-size-lg));
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.grade-card__metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.grade-card__metric {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.grade-card__metric dd {
+  font-size: clamp(var(--font-size-sm), 1.1vw, var(--font-size-lg));
+  white-space: nowrap;
+}
+
+.grade-card__uses {
+  flex: 1;
+}
+
+.grade-card__sizes {
+  align-items: center;
+  gap: var(--space-2);
+  margin-block: 0 var(--space-6);
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
+.grade-card__sizes li {
+  display: flex;
+  min-height: calc(var(--font-size-xs) + var(--space-2) + var(--border-width) + var(--border-width));
+  align-items: center;
+  padding-block: var(--space-1);
+  padding-inline: var(--space-2);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.grade-card > .btn-primary {
+  margin-block-start: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding-inline: clamp(var(--space-2), 1vw, var(--space-4));
+  font-size: clamp(var(--font-size-xs), 1vw, var(--font-size-sm));
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) and (max-width: 1100px) {
+  .products-grade__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .products-grade__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

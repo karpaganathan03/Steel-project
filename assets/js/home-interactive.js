@@ -71,10 +71,11 @@
     const prevBtn = document.querySelector(".hero__arrow--prev");
     const nextBtn = document.querySelector(".hero__arrow--next");
     const titleEl = document.getElementById("home-title");
-    const eyebrowEl = document.querySelector(".hero .eyebrow");
-    const descEl = document.querySelector(".hero p[data-i18n='homeDescription']");
+    const eyebrowEl = document.querySelector(".hero .eyebrow, .hero__badge .eyebrow");
+    const descEl = document.querySelector(".hero p[data-i18n='homeDescription'], .hero__lead");
+    const dots = document.querySelectorAll(".hero__dot");
 
-    if (!hero || !prevBtn || !nextBtn || !titleEl) return;
+    if (!hero || !titleEl) return;
 
     const slides = [
       {
@@ -108,23 +109,39 @@
     function renderSlide(index) {
       const s = slides[index];
       if (eyebrowEl) eyebrowEl.textContent = s.eyebrow;
-      titleEl.innerHTML = '<span data-i18n="homeHeadlineStart">' + s.titleStart + '</span> <span class="hero__title-accent" data-i18n="homeHeadlineAccent">' + s.titleAccent + '</span>';
+      titleEl.innerHTML = '<span class="hero__title-white" data-i18n="homeHeadlineStart">' + s.titleStart + '</span> <span class="hero__title-accent" data-i18n="homeHeadlineAccent">' + s.titleAccent + '</span>';
       if (descEl) descEl.textContent = s.desc;
-      const imgEl = hero.querySelector(".hero__image");
+      const imgEl = document.querySelector(".hero__image");
       if (imgEl && s.image) {
         imgEl.src = s.image;
         if (s.alt) imgEl.alt = s.alt;
       }
+      dots.forEach(function (dot, i) {
+        const isActive = (i === index);
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
     }
 
-    prevBtn.addEventListener("click", function () {
-      current = (current - 1 + slides.length) % slides.length;
-      renderSlide(current);
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        current = (current - 1 + slides.length) % slides.length;
+        renderSlide(current);
+      });
+    }
 
-    nextBtn.addEventListener("click", function () {
-      current = (current + 1) % slides.length;
-      renderSlide(current);
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        current = (current + 1) % slides.length;
+        renderSlide(current);
+      });
+    }
+
+    dots.forEach(function (dot, idx) {
+      dot.addEventListener("click", function () {
+        current = idx;
+        renderSlide(current);
+      });
     });
   }
 

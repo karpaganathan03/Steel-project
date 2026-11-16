@@ -2,6 +2,14 @@
   transform: scaleX(-1);
 }
 
+[dir="rtl"] .hero__arrow svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .hero__dots {
+  transform: translateX(50%);
+}
+
 [dir="rtl"] select.field,
 [dir="rtl"] .filter-bar select {
   background-position: left calc(var(--space-3) + 4px) center, left var(--space-3) center;

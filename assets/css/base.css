@@ -25,6 +25,7 @@
   --border-width: 1px;
   --container-width: 1240px;
   --gutter: 20px;
+  --card-grid-gap: var(--space-4);
   --card-padding: 24px;
   --header-height: 72px;
   --z-base: 0;

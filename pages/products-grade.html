@@ -9,15 +9,17 @@
   <meta property="og:title" content="TMT Grades | ForgeLine Steel">
   <meta property="og:description" content="Compare common TMT grades and enquire about project-specific steel requirements.">
   <title>TMT Grades | ForgeLine Steel</title>
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1E2E'/%3E%3Cpath d='M12 14h40v9H12zm0 14h40v9H12zm0 14h40v9H12z' fill='%23D8AF36'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/themes.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <link rel="stylesheet" href="../assets/css/products-grade.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/media.css">
   <script defer src="../assets/js/main.js"></script>
   <script defer src="../assets/js/theme.js"></script>
   <script defer src="../assets/js/direction.js"></script>
@@ -25,6 +27,8 @@
   <script defer src="../assets/js/scroll-progress.js"></script>
   <script defer src="../assets/js/data.js"></script>
   <script defer src="../assets/js/products.js"></script>
+  <script defer src="../assets/js/animations.js"></script>
+  <script defer src="../assets/js/media.js"></script>
 </head>
 <body id="top" data-base="..">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -38,37 +42,45 @@
 
 
 
-    <section class="page-hero products-grade__hero" aria-labelledby="page-title">
+    <section class="page-hero products-grade__hero" id="products-grade-hero" aria-labelledby="page-title">
       <div class="container page-hero__container">
-        <div class="page-hero__card">
-          <div class="page-hero__grid">
-            <div class="page-hero__content-col">
-              <span class="eyebrow page-hero__eyebrow" data-i18n="gradePageEyebrow">TMT bar grades</span>
-              <h1 id="page-title" data-i18n="gradePageTitle">Strength for every structure.</h1>
-              <p data-i18n="gradePageDescription">Understand common TMT grades at a glance. Confirm the right specification with your project engineer and our sales team.</p>
-              <div class="hero__actions">
-                <a class="btn-primary btn-primary--pill btn-primary--lg" href="price-enquiry.html">Get Grade Quote <span class="icon-dir" aria-hidden="true">→</span></a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="products-size.html">Check Diameters</a>
-              </div>
+        <div class="page-hero__grid">
+          <!-- Left: Content -->
+          <div class="page-hero__content-col">
+            <div class="page-hero__badge">
+              <span class="page-hero__badge-icon" aria-hidden="true">🛡</span>
+              <span class="eyebrow" data-i18n="gradePageEyebrow">TMT bar grades</span>
             </div>
-            <div class="page-hero__media-col">
-              <div class="page-hero__image-frame">
-                <img class="page-hero__image" src="../assets/images/Product page Hero 2.jpg" alt="Certified Fe 550D and Fe 500D TMT reinforcement rebars" loading="eager">
+            <h1 id="page-title">
+              <span class="hero__title-white" data-i18n="gradePageTitle">Strength for</span>
+              <span class="hero__title-accent">every structure.</span>
+            </h1>
+            <p class="page-hero__lead" data-i18n="gradePageDescription">Understand common TMT grades at a glance. Confirm the right specification with your project engineer and our sales team.</p>
+            <div class="hero__actions">
+              <a class="btn-primary btn-primary--pill btn-primary--lg" href="price-enquiry.html">Get Grade Quote <span class="icon-dir" aria-hidden="true">→</span></a>
+              <a class="btn-outline btn-outline--pill btn-outline--lg" href="products-size.html">Check Diameters</a>
+            </div>
+
+            <div class="page-hero__proof" aria-label="Grade benchmarks">
+              <div class="page-hero__proof-item">
+                <strong>550 MPa</strong>
+                <span>Min yield strength</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>16.0%</strong>
+                <span>Min elongation class</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>Seismic</strong>
+                <span>Earthquake resistant</span>
               </div>
             </div>
           </div>
-          <div class="page-hero__proof" aria-label="Grade benchmarks">
-            <div class="page-hero__proof-item">
-              <strong>550 MPa</strong>
-              <span>Min yield strength</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>16.0%</strong>
-              <span>Min elongation class</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>Seismic</strong>
-              <span>Earthquake resistant</span>
+
+          <!-- Right: Media Showcase Frame with Dedicated Named Hero Image -->
+          <div class="page-hero__media-col">
+            <div class="page-hero__image-frame media-frame media--poster">
+              <img class="page-hero__image" src="../assets/images/Product page Hero 2.jpg" alt="Certified Fe 550D and Fe 500D TMT reinforcement rebars" loading="eager" decoding="async" width="736" height="722" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
           </div>
         </div>
@@ -90,6 +102,8 @@
           <button class="grade-tab" id="grade-tab-550" type="button" role="tab" aria-selected="false" aria-controls="grade-products" tabindex="-1" data-grade-filter="Fe 550">Fe 550</button>
           <button class="grade-tab" id="grade-tab-550d" type="button" role="tab" aria-selected="false" aria-controls="grade-products" tabindex="-1" data-grade-filter="Fe 550D">Fe 550D</button>
           <button class="grade-tab" id="grade-tab-600" type="button" role="tab" aria-selected="false" aria-controls="grade-products" tabindex="-1" data-grade-filter="Fe 600">Fe 600</button>
+          <button class="grade-tab" id="grade-tab-415d" type="button" role="tab" aria-selected="false" aria-controls="grade-products" tabindex="-1" data-grade-filter="Fe 415D">Fe 415D</button>
+          <button class="grade-tab" id="grade-tab-500s" type="button" role="tab" aria-selected="false" aria-controls="grade-products" tabindex="-1" data-grade-filter="Fe 500S">Fe 500S</button>
         </div>
         <p class="products-grade__result-count" data-grade-result-count aria-live="polite"></p>
         <div class="products-grade__grid" id="grade-products" role="tabpanel" aria-labelledby="grade-tab-all" data-grade-product-list></div>
@@ -137,7 +151,7 @@
           </ul>
           <p class="products-grade__disclaimer" data-i18n="gradeSpecNote">The information on this page is general guidance, not engineering advice or a certification of supplied products.</p>
         </div>
-        <img class="split__image" src="../assets/images/about/quality.svg" alt="Illustration representing steel reinforcement quality verification" loading="lazy">
+        <img class="split__image" src="../assets/images/about/quality.svg" alt="Illustration representing steel reinforcement quality verification" loading="lazy" decoding="async" width="900" height="600">
       </div>
     </section>
 

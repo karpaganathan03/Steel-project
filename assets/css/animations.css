@@ -1,0 +1,357 @@
+/* ===== MOTION SYSTEM ===== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .section-heading.reveal h2::after {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.js .section-heading.reveal.is-visible h2::after {
+  transform: scaleX(1);
+  transition-delay: 150ms;
+}
+
+.js .hero-entrance .hero__badge,
+.js .hero-entrance .page-hero__badge,
+.js .hero-entrance h1,
+.js .hero-entrance p,
+.js .hero-entrance .hero__actions,
+.js .hero-entrance .page-hero__proof,
+.js .hero-entrance .hero__proof,
+.js .hero-entrance .page-hero__image-frame,
+.js .hero-entrance .hero__image-frame {
+  transition: opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.js .hero-entrance .hero__badge,
+.js .hero-entrance .page-hero__badge {
+  --entrance-delay: 0ms;
+}
+
+.js .hero-entrance h1 {
+  --entrance-delay: 90ms;
+}
+
+.js .hero-entrance p {
+  --entrance-delay: 180ms;
+}
+
+.js .hero-entrance .hero__actions {
+  --entrance-delay: 270ms;
+}
+
+.js .hero-entrance .hero__proof,
+.js .hero-entrance .page-hero__proof {
+  --entrance-delay: 360ms;
+}
+
+.js .hero-entrance .hero__badge,
+.js .hero-entrance .page-hero__badge,
+.js .hero-entrance h1,
+.js .hero-entrance p,
+.js .hero-entrance .hero__actions,
+.js .hero-entrance .page-hero__proof,
+.js .hero-entrance .hero__proof {
+  transition-delay: var(--entrance-delay, 0ms);
+}
+
+.js .hero-entrance:not(.hero-entrance--ready) .hero__badge,
+.js .hero-entrance:not(.hero-entrance--ready) .page-hero__badge,
+.js .hero-entrance:not(.hero-entrance--ready) h1,
+.js .hero-entrance:not(.hero-entrance--ready) p,
+.js .hero-entrance:not(.hero-entrance--ready) .hero__actions,
+.js .hero-entrance:not(.hero-entrance--ready) .page-hero__proof,
+.js .hero-entrance:not(.hero-entrance--ready) .hero__proof,
+.js .hero-entrance:not(.hero-entrance--ready) .page-hero__image-frame,
+.js .hero-entrance:not(.hero-entrance--ready) .hero__image-frame {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js .hero-entrance:not(.hero-entrance--ready) .page-hero__image-frame,
+.js .hero-entrance:not(.hero-entrance--ready) .hero__image-frame {
+  transform: scale(1.04);
+}
+
+.js .hero-entrance .page-hero__image-frame,
+.js .hero-entrance .hero__image-frame {
+  transition-delay: 180ms;
+}
+
+.js .hero-entrance--ready .hero__badge,
+.js .hero-entrance--ready .page-hero__badge,
+.js .hero-entrance--ready h1,
+.js .hero-entrance--ready p,
+.js .hero-entrance--ready .hero__actions,
+.js .hero-entrance--ready .page-hero__proof,
+.js .hero-entrance--ready .hero__proof,
+.js .hero-entrance--ready .page-hero__image-frame,
+.js .hero-entrance--ready .hero__image-frame {
+  opacity: 1;
+  transform: none;
+}
+
+.hero .hero__content-col,
+.hero .hero__media-col {
+  transition: opacity 350ms ease, transform 350ms ease;
+}
+
+.hero.is-changing .hero__content-col,
+.hero.is-changing .hero__media-col {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.hero__dot {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__dot::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-orange);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.hero.is-progressing .hero__dot.is-active::after {
+  animation: hero-dot-progress 5000ms linear forwards;
+}
+
+@keyframes hero-dot-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.product-card,
+.feature-card,
+.info-card,
+.home-story-range__card,
+.products-hub__choice,
+.products-hub__category,
+.grade-card,
+.size-product-card,
+.project-card,
+.blog-card,
+.contact-card {
+  transition: transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.product-card:hover,
+.feature-card:hover,
+.info-card:hover,
+.home-story-range__card:hover,
+.products-hub__choice:hover,
+.products-hub__category:hover,
+.grade-card:hover,
+.size-product-card:hover,
+.project-card:hover,
+.blog-card:hover,
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-raised);
+}
+
+.product-card__image img,
+.home-story-range__card .product-card__image img,
+.products-hub__choice-image img,
+.size-product-card__image {
+  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.product-card:hover .product-card__image img,
+.feature-card:hover .product-card__image img,
+.home-story-range__card:hover .product-card__image img,
+.products-hub__choice:hover .products-hub__choice-image img {
+  transform: scale(1.06);
+}
+
+.size-product-card:hover .size-product-card__image {
+  transform: scale(1.06);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-ghost {
+  transition: transform 180ms ease, background-color 180ms ease,
+    border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active,
+.btn-ghost:active {
+  transform: translateY(1px);
+}
+
+.btn-primary:hover .icon-dir,
+.btn-secondary:hover .icon-dir,
+.btn-outline:hover .icon-dir,
+.btn-ghost:hover .icon-dir,
+.text-link:hover .icon-dir,
+.product-card:hover .icon-dir,
+.home-story-range__card:hover .icon-dir,
+.products-hub__choice:hover .icon-dir,
+.products-hub__category:hover .icon-dir,
+.size-product-card:hover .icon-dir {
+  transform: translateX(3px);
+}
+
+.site-header__inner {
+  transition: transform 220ms ease;
+}
+
+.site-header.is-scrolled .site-header__inner {
+  transform: scale(0.985);
+}
+
+[dir="rtl"] .section-heading h2::after,
+[dir="rtl"] .hero__dot::after {
+  transform-origin: right center;
+}
+
+[dir="rtl"] .btn-primary:hover .icon-dir,
+[dir="rtl"] .btn-secondary:hover .icon-dir,
+[dir="rtl"] .btn-outline:hover .icon-dir,
+[dir="rtl"] .btn-ghost:hover .icon-dir,
+[dir="rtl"] .text-link:hover .icon-dir,
+[dir="rtl"] .product-card:hover .icon-dir,
+[dir="rtl"] .home-story-range__card:hover .icon-dir,
+[dir="rtl"] .products-hub__choice:hover .icon-dir,
+[dir="rtl"] .products-hub__category:hover .icon-dir,
+[dir="rtl"] .size-product-card:hover .icon-dir {
+  transform: translateX(-3px) scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .section-heading.reveal h2::after,
+  .js .hero-entrance .hero__badge,
+  .js .hero-entrance .page-hero__badge,
+  .js .hero-entrance h1,
+  .js .hero-entrance p,
+  .js .hero-entrance .hero__actions,
+  .js .hero-entrance .page-hero__proof,
+  .js .hero-entrance .hero__proof,
+  .js .hero-entrance .page-hero__image-frame,
+  .js .hero-entrance .hero__image-frame,
+  .hero .hero__content-col,
+  .hero .hero__media-col,
+  .product-card,
+  .feature-card,
+  .info-card,
+  .home-story-range__card,
+  .products-hub__choice,
+  .products-hub__category,
+  .grade-card,
+  .size-product-card,
+  .project-card,
+  .blog-card,
+  .contact-card,
+  .product-card__image img,
+  .home-story-range__card .product-card__image img,
+  .products-hub__choice-image img,
+  .size-product-card__image,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  .btn-ghost,
+  .site-header__inner {
+    transition: none;
+  }
+
+  .js .reveal,
+  .js .reveal.is-visible,
+  .js .section-heading.reveal h2::after,
+  .js .section-heading.reveal.is-visible h2::after,
+  .js .hero-entrance:not(.hero-entrance--ready) .hero__badge,
+  .js .hero-entrance:not(.hero-entrance--ready) .page-hero__badge,
+  .js .hero-entrance:not(.hero-entrance--ready) h1,
+  .js .hero-entrance:not(.hero-entrance--ready) p,
+  .js .hero-entrance:not(.hero-entrance--ready) .hero__actions,
+  .js .hero-entrance:not(.hero-entrance--ready) .page-hero__proof,
+  .js .hero-entrance:not(.hero-entrance--ready) .hero__proof,
+  .js .hero-entrance:not(.hero-entrance--ready) .page-hero__image-frame,
+  .js .hero-entrance:not(.hero-entrance--ready) .hero__image-frame,
+  .js .hero-entrance--ready .hero__badge,
+  .js .hero-entrance--ready .page-hero__badge,
+  .js .hero-entrance--ready h1,
+  .js .hero-entrance--ready p,
+  .js .hero-entrance--ready .hero__actions,
+  .js .hero-entrance--ready .page-hero__proof,
+  .js .hero-entrance--ready .hero__proof,
+  .js .hero-entrance--ready .page-hero__image-frame,
+  .js .hero-entrance--ready .hero__image-frame,
+  .hero.is-changing .hero__content-col,
+  .hero.is-changing .hero__media-col,
+  .product-card:hover,
+  .feature-card:hover,
+  .info-card:hover,
+  .home-story-range__card:hover,
+  .products-hub__choice:hover,
+  .products-hub__category:hover,
+  .grade-card:hover,
+  .project-card:hover,
+  .blog-card:hover,
+  .contact-card:hover,
+  .size-product-card:hover,
+  .product-card:hover .product-card__image img,
+  .feature-card:hover .product-card__image img,
+  .home-story-range__card:hover .product-card__image img,
+  .products-hub__choice:hover .products-hub__choice-image img,
+  .size-product-card:hover .size-product-card__image,
+  .btn-primary:active,
+  .btn-secondary:active,
+  .btn-outline:active,
+  .btn-ghost:active,
+  .btn-primary:hover .icon-dir,
+  .btn-secondary:hover .icon-dir,
+  .btn-outline:hover .icon-dir,
+  .btn-ghost:hover .icon-dir,
+  .text-link:hover .icon-dir,
+  .product-card:hover .icon-dir,
+  .home-story-range__card:hover .icon-dir,
+  .products-hub__choice:hover .icon-dir,
+  .products-hub__category:hover .icon-dir,
+  .size-product-card:hover .icon-dir,
+  .site-header.is-scrolled .site-header__inner {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero.is-progressing .hero__dot.is-active::after {
+    animation: none;
+  }
+
+  [dir="rtl"] .btn-primary:hover .icon-dir,
+  [dir="rtl"] .btn-secondary:hover .icon-dir,
+  [dir="rtl"] .btn-outline:hover .icon-dir,
+  [dir="rtl"] .btn-ghost:hover .icon-dir,
+  [dir="rtl"] .text-link:hover .icon-dir,
+  [dir="rtl"] .product-card:hover .icon-dir,
+  [dir="rtl"] .home-story-range__card:hover .icon-dir,
+  [dir="rtl"] .products-hub__choice:hover .icon-dir,
+  [dir="rtl"] .products-hub__category:hover .icon-dir,
+  [dir="rtl"] .size-product-card:hover .icon-dir {
+    transform: scaleX(-1);
+  }
+}

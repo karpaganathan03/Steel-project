@@ -9,15 +9,17 @@
   <meta property="og:title" content="Price Enquiry | ForgeLine Steel">
   <meta property="og:description" content="Tell us what you need for your steel project and request a supply enquiry.">
   <title>Price Enquiry | ForgeLine Steel</title>
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1E2E'/%3E%3Cpath d='M12 14h40v9H12zm0 14h40v9H12zm0 14h40v9H12z' fill='%23D8AF36'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/themes.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <link rel="stylesheet" href="../assets/css/price-enquiry.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/media.css">
   <script defer src="../assets/js/main.js"></script>
   <script defer src="../assets/js/theme.js"></script>
   <script defer src="../assets/js/direction.js"></script>
@@ -25,6 +27,8 @@
   <script defer src="../assets/js/scroll-progress.js"></script>
   <script defer src="../assets/js/data.js"></script>
   <script defer src="../assets/js/forms.js"></script>
+  <script defer src="../assets/js/animations.js"></script>
+  <script defer src="../assets/js/media.js"></script>
 </head>
 <body id="top" data-base="..">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -37,42 +41,51 @@
       </ol>
 
 
-    <section class="page-hero price-enquiry__hero" aria-labelledby="page-title">
+    <section class="page-hero price-enquiry__hero" id="price-enquiry-hero" aria-labelledby="page-title">
       <div class="container page-hero__container">
-        <div class="page-hero__card">
-          <div class="page-hero__grid">
-            <div class="page-hero__content-col">
-              <span class="eyebrow page-hero__eyebrow" data-i18n="enquiryEyebrow">Price enquiry</span>
-              <h1 id="page-title" data-i18n="enquiryPageTitle">Let’s put a quote together.</h1>
-              <p data-i18n="enquiryPageDescription">Tell us what you need and where it needs to go. Our team can check product availability and prepare a tailored quote.</p>
-              <div class="hero__actions">
-                <a class="btn-primary btn-primary--pill btn-primary--lg" href="#enquiry-form">Fill Enquiry Form <span class="icon-dir" aria-hidden="true">↓</span></a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="tel:+919874561230">+91 98745 61230</a>
-              </div>
+        <div class="page-hero__grid">
+          <!-- Left: Content -->
+          <div class="page-hero__content-col">
+            <div class="page-hero__badge">
+              <span class="page-hero__badge-icon" aria-hidden="true">🛡</span>
+              <span class="eyebrow" data-i18n="enquiryEyebrow">Price enquiry</span>
             </div>
-            <div class="page-hero__media-col">
-              <div class="page-hero__image-frame">
-                <img class="page-hero__image" src="../assets/images/Price page Hero.jpg" alt="Construction structural steel reinforcement column and residential villa project" loading="eager">
+            <h1 id="page-title">
+              <span class="hero__title-white" data-i18n="enquiryPageTitle">Let’s put a</span>
+              <span class="hero__title-accent">quote together.</span>
+            </h1>
+            <p class="page-hero__lead" data-i18n="enquiryPageDescription">Tell us what you need and where it needs to go. Our team can check product availability and prepare a tailored quote.</p>
+            <div class="hero__actions">
+              <a class="btn-primary btn-primary--pill btn-primary--lg" href="#enquiry-form">Fill Enquiry Form <span class="icon-dir" aria-hidden="true">↓</span></a>
+              <a class="btn-secondary btn-secondary--pill btn-secondary--lg" href="tel:+919874561230">+91 98745 61230</a>
+            </div>
+
+            <div class="page-hero__proof" aria-label="Enquiry highlights">
+              <div class="page-hero__proof-item">
+                <strong>24–48h</strong>
+                <span>Fast quote turnaround</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>Transparent</strong>
+                <span>Computerized weighbridge</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>Direct Mill</strong>
+                <span>Wholesale pricing</span>
               </div>
             </div>
           </div>
-          <div class="page-hero__proof" aria-label="Enquiry highlights">
-            <div class="page-hero__proof-item">
-              <strong>24–48h</strong>
-              <span>Fast quote turnaround</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>Transparent</strong>
-              <span>Computerized weighbridge</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>Direct Mill</strong>
-              <span>Wholesale pricing</span>
+
+          <!-- Right: Media Showcase Frame with Dedicated Named Hero Image -->
+          <div class="page-hero__media-col">
+            <div class="page-hero__image-frame media-frame media--poster">
+              <img class="page-hero__image" src="../assets/images/Price page Hero.jpg" alt="Construction structural steel reinforcement column and residential villa project" loading="eager" decoding="async" width="600" height="679" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
           </div>
         </div>
       </div>
     </section>
+    </div>
 
     <section class="section" aria-labelledby="enquiry-form-heading">
       <div class="container price-enquiry__layout">

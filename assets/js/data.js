@@ -289,7 +289,13 @@ window.SteelData = {
       contactPhoneTitle: "Phone",
       contactEmailTitle: "Email",
       contactHoursTitle: "Working hours",
-      contactHours: "Monday–Saturday, 9:00 AM–6:00 PM IST (UTC+05:30).",
+      contactHours: "Mon-Sat, 9:00 AM - 6:00 PM IST",
+      contactDirections: "Get directions",
+      contactCallNow: "Call now",
+      contactChatWhatsApp: "Chat on WhatsApp",
+      contactDirectionsAria: "Get directions to 146(1), Sunvale Complex, Virudhunagar",
+      contactCallAria: "Call ForgeLine Steel at +91 98745 61230",
+      contactWhatsAppAria: "Chat with ForgeLine Steel on WhatsApp",
       contactMapHeading: "Find our location",
       contactMapDescription: "Find us at 146(1), Sunvale Complex, Virudhunagar.",
       contactMapAlt: "Google Map showing 146(1), Sunvale Complex, Virudhunagar",
@@ -580,7 +586,13 @@ window.SteelData = {
       contactPhoneTitle: "الهاتف",
       contactEmailTitle: "البريد الإلكتروني",
       contactHoursTitle: "ساعات العمل",
-      contactHours: "من الاثنين إلى السبت، 9:00 صباحًا–6:00 مساءً (بالتوقيت المحلي).",
+      contactHours: "من الاثنين إلى السبت، 9:00 ص - 6:00 م بتوقيت الهند",
+      contactDirections: "احصل على الاتجاهات",
+      contactCallNow: "اتصل الآن",
+      contactChatWhatsApp: "تواصل عبر واتساب",
+      contactDirectionsAria: "الاتجاهات إلى 146(1)، مجمع سنفيل، فيرودهوناغار",
+      contactCallAria: "اتصل بفورج لاين ستيل على الرقم +91 98745 61230",
+      contactWhatsAppAria: "تواصل مع فورج لاين ستيل عبر واتساب",
       contactMapHeading: "اعثر على موقعنا",
       contactMapDescription: "اعثر علينا في 146(1), Sunvale Complex, Virudhunagar.",
       contactMapAlt: "خريطة Google للموقع 146(1), Sunvale Complex, Virudhunagar",
@@ -625,6 +637,7 @@ window.SteelData = {
   steelGrades: [
     {
       name: "Fe 415",
+      image: "Fe 415.jpg",
       yieldStrength: "415 MPa",
       elongation: "14.5%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -635,6 +648,7 @@ window.SteelData = {
     },
     {
       name: "Fe 500",
+      image: "Fe 500.jpg",
       yieldStrength: "500 MPa",
       elongation: "12%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -645,6 +659,7 @@ window.SteelData = {
     },
     {
       name: "Fe 500D",
+      image: "Fe 500D.jpg",
       yieldStrength: "500 MPa",
       elongation: "16%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -655,6 +670,7 @@ window.SteelData = {
     },
     {
       name: "Fe 550",
+      image: "Fe 550.jpg",
       yieldStrength: "550 MPa",
       elongation: "8%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -665,6 +681,7 @@ window.SteelData = {
     },
     {
       name: "Fe 550D",
+      image: "Fe 550D.jpg",
       yieldStrength: "550 MPa",
       elongation: "14.5%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -675,6 +692,7 @@ window.SteelData = {
     },
     {
       name: "Fe 600",
+      image: "Fe 600.jpg",
       yieldStrength: "600 MPa",
       elongation: "10%*",
       sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
@@ -682,11 +700,36 @@ window.SteelData = {
         en: "Applications where Fe 600 is explicitly specified and approved for the design.",
         ar: "التطبيقات التي تحدد وتعتمد فيها المخططات درجة Fe 600 صراحةً."
       }
+    },
+    {
+      name: "Fe 415D",
+      displayTitle: "FE 415D",
+      image: "FE 415D.jpg",
+      yieldStrength: "415 MPa",
+      elongation: "18%*",
+      sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
+      uses: {
+        en: "General reinforced concrete applications where greater ductility than standard Fe 415 is specified.",
+        ar: "أعمال الخرسانة المسلحة التي تتطلب مطيلية أعلى من درجة Fe 415 القياسية."
+      }
+    },
+    {
+      name: "Fe 500S",
+      displayTitle: "FE 500S",
+      image: "FE 500S.jpg",
+      yieldStrength: "500 MPa",
+      elongation: "18%*",
+      sizes: ["8 mm", "10 mm", "12 mm", "16 mm", "20 mm", "25 mm", "32 mm"],
+      uses: {
+        en: "Seismic-zone structures where high ductility and energy absorption are required by the approved design.",
+        ar: "منشآت المناطق الزلزالية التي يتطلب تصميمها المعتمد مطيلية عالية وامتصاصًا للطاقة."
+      }
     }
   ],
   steelSizes: [
     {
       size: "8 mm",
+      image: "8mm.jpg",
       diameter: 8,
       weightPerMetre: 0.395,
       barsPerTonne: 211,
@@ -698,6 +741,7 @@ window.SteelData = {
     },
     {
       size: "10 mm",
+      image: "10mm.jpg",
       diameter: 10,
       weightPerMetre: 0.617,
       barsPerTonne: 135,
@@ -709,6 +753,7 @@ window.SteelData = {
     },
     {
       size: "12 mm",
+      image: "12mm.jpg",
       diameter: 12,
       weightPerMetre: 0.889,
       barsPerTonne: 94,
@@ -720,6 +765,7 @@ window.SteelData = {
     },
     {
       size: "16 mm",
+      image: "16mm.jpg",
       diameter: 16,
       weightPerMetre: 1.580,
       barsPerTonne: 53,
@@ -731,6 +777,7 @@ window.SteelData = {
     },
     {
       size: "20 mm",
+      image: "20mm.jpg",
       diameter: 20,
       weightPerMetre: 2.469,
       barsPerTonne: 34,
@@ -742,6 +789,7 @@ window.SteelData = {
     },
     {
       size: "25 mm",
+      image: "25mm.jpg",
       diameter: 25,
       weightPerMetre: 3.858,
       barsPerTonne: 22,
@@ -753,6 +801,7 @@ window.SteelData = {
     },
     {
       size: "32 mm",
+      image: "32mm.jpg",
       diameter: 32,
       weightPerMetre: 6.321,
       barsPerTonne: 13,

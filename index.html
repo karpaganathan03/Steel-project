@@ -9,14 +9,16 @@
   <meta property="og:title" content="ForgeLine Steel | Steel you can build on">
   <meta property="og:description" content="Dependable TMT bars and construction steel, with clear quotes and delivery support.">
   <title>ForgeLine Steel | Steel you can build on</title>
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1E2E'/%3E%3Cpath d='M12 14h40v9H12zm0 14h40v9H12zm0 14h40v9H12z' fill='%23D8AF36'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/themes.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/media.css">
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/theme.js"></script>
   <script defer src="assets/js/direction.js"></script>
@@ -24,48 +26,65 @@
   <script defer src="assets/js/scroll-progress.js"></script>
   <script defer src="assets/js/data.js"></script>
   <script defer src="assets/js/home-interactive.js"></script>
+  <script defer src="assets/js/animations.js"></script>
+  <script defer src="assets/js/media.js"></script>
 </head>
 <body id="top" data-base=".">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div id="site-header"></div>
   
   <main id="main-content">
-    <!-- Hero Section (Layout Model with Asymmetric Split, Pill Buttons & Proof Bar) -->
-    <section class="hero" aria-labelledby="home-title">
+    <!-- Hero Section (Unified Full-Bleed Section matching reference) -->
+    <section class="hero" id="home-hero" aria-labelledby="home-title">
+      <!-- Outer Slider Navigation Arrows at Viewport Edges -->
+      <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Previous slide">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="hero__arrow hero__arrow--next" type="button" aria-label="Next slide">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
       <div class="container hero__container">
-        <div class="hero__card">
-          <div class="hero__grid">
-            <div class="hero__content-col">
+        <div class="hero__grid">
+          <!-- Left: Hero Content -->
+          <div class="hero__content-col">
+            <div class="hero__badge">
+              <span class="hero__badge-icon" aria-hidden="true">🛡</span>
               <span class="eyebrow" data-i18n="homeEyebrow">Your trusted steel supply partner</span>
-              <h1 id="home-title"><span data-i18n="homeHeadlineStart">Steel you can</span> <span class="hero__title-accent" data-i18n="homeHeadlineAccent">build on.</span></h1>
-              <p data-i18n="homeDescription">Quality TMT bars and construction steel, sourced with care and delivered with dependable support for your project.</p>
-              
-              <div class="hero__actions">
-                <a class="btn-primary btn-primary--pill btn-primary--lg" href="pages/price-enquiry.html"><span data-i18n="homeQuoteCta">Get Price Quote</span><span class="icon-dir" aria-hidden="true">→</span></a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="pages/products-grade.html" data-i18n="homeProductsCta">View TMT Grades</a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="#about-us" data-i18n="homeExperienceCta">Explore Our Experience</a>
-              </div>
+            </div>
+            <h1 id="home-title">
+              <span class="hero__title-white" data-i18n="homeHeadlineStart">Steel you can</span>
+              <span class="hero__title-accent" data-i18n="homeHeadlineAccent">build on.</span>
+            </h1>
+            <p class="hero__lead" data-i18n="homeDescription">Quality TMT bars and construction steel, sourced with care and delivered with dependable support for your project.</p>
+
+            <div class="hero__actions">
+              <a class="btn-primary btn-primary--pill btn-primary--lg" href="pages/price-enquiry.html"><span data-i18n="homeQuoteCta">Get Price Quote</span><span class="icon-dir" aria-hidden="true">→</span></a>
+              <a class="btn-secondary btn-secondary--pill btn-secondary--lg" href="pages/products-grade.html" data-i18n="homeProductsCta">View TMT Grades</a>
+              <a class="btn-outline btn-outline--pill btn-outline--lg" href="#about-us" data-i18n="homeExperienceCta">Explore Our Experience</a>
             </div>
 
-            <div class="hero__media-col">
-              <div class="hero__image-frame">
-                <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Previous slide">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-                </button>
-                <button class="hero__arrow hero__arrow--next" type="button" aria-label="Next slide">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-                </button>
-                <img class="hero__image" src="assets/images/Home page Hero 1.jpg" alt="ForgeLine steel specialist inspecting certified rebar steel" loading="eager">
-              </div>
+            <div class="hero__proof" aria-label="What you can expect" data-i18n-aria-label="homeProofLabel">
+              <div class="hero__proof-item"><strong data-i18n="homeProofOneTitle">Quality</strong><span data-i18n="homeProofOneDescription">Trusted sourcing</span></div>
+              <div class="hero__proof-item"><strong data-i18n="homeProofTwoTitle">Clarity</strong><span data-i18n="homeProofTwoDescription">Clear quotations</span></div>
+              <div class="hero__proof-item"><strong data-i18n="homeProofThreeTitle">Delivery</strong><span data-i18n="homeProofThreeDescription">Project coordination</span></div>
             </div>
           </div>
 
-          <div class="hero__proof" aria-label="What you can expect" data-i18n-aria-label="homeProofLabel">
-            <div class="hero__proof-item"><strong data-i18n="homeProofOneTitle">Quality</strong><span data-i18n="homeProofOneDescription">Trusted sourcing</span></div>
-            <div class="hero__proof-item"><strong data-i18n="homeProofTwoTitle">Clarity</strong><span data-i18n="homeProofTwoDescription">Clear quotations</span></div>
-            <div class="hero__proof-item"><strong data-i18n="homeProofThreeTitle">Delivery</strong><span data-i18n="homeProofThreeDescription">Project coordination</span></div>
+          <!-- Right: Hero Media Frame with Full Image Visibility -->
+          <div class="hero__media-col">
+            <div class="hero__image-frame media-frame media--poster">
+              <img class="hero__image" src="assets/images/Home page Hero 1.jpg" alt="ForgeLine steel specialist inspecting certified rebar steel" loading="eager" decoding="async" width="1122" height="1402" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Bottom Center Slider Indicator Dashes -->
+      <div class="hero__dots" role="tablist" aria-label="Slide indicators">
+        <button class="hero__dot is-active" type="button" aria-label="Slide 1" aria-selected="true"></button>
+        <button class="hero__dot" type="button" aria-label="Slide 2" aria-selected="false"></button>
+        <button class="hero__dot" type="button" aria-label="Slide 3" aria-selected="false"></button>
       </div>
     </section>
 
@@ -74,11 +93,11 @@
       <div class="container about-woodwork__inner">
         <!-- Left: Dual Images Side by Side -->
         <div class="about-dual-images">
-          <div class="about-dual-images__col">
-            <img src="assets/images/about/steel-engineer.jpg" alt="Professional metallurgical steel engineer inspecting high-grade ribbed TMT steel bars" loading="lazy">
+          <div class="about-dual-images__col media-frame">
+            <img src="assets/images/about/steel-engineer.jpg" alt="Professional metallurgical steel engineer inspecting high-grade ribbed TMT steel bars" loading="lazy" decoding="async" width="1200" height="896">
           </div>
-          <div class="about-dual-images__col">
-            <img src="assets/images/about/steel-grinding.jpg" alt="Industrial fabricator cutting heavy structural steel and TMT rebar with angle grinder and flying sparks" loading="lazy">
+          <div class="about-dual-images__col media-frame">
+            <img src="assets/images/about/steel-grinding.jpg" alt="Industrial fabricator cutting heavy structural steel and TMT rebar with angle grinder and flying sparks" loading="lazy" decoding="async" width="1200" height="896">
           </div>
         </div>
 
@@ -129,7 +148,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/Tata tiscon.jpg" alt="Tata Tiscon - Tata Steel Authorized Producer" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/Tata tiscon.jpg" alt="Tata Tiscon - Tata Steel Authorized Producer" loading="lazy" decoding="async" width="735" height="490">
               </div>
               <span class="brand-card__name">Tata Tiscon</span>
               <span class="brand-card__tag">Tata Steel Ltd</span>
@@ -138,7 +157,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/JSW Neosteel.jpg" alt="JSW Neosteel - JSW Steel Authorized Producer" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/JSW Neosteel.jpg" alt="JSW Neosteel - JSW Steel Authorized Producer" loading="lazy" decoding="async" width="736" height="736">
               </div>
               <span class="brand-card__name">JSW Neosteel</span>
               <span class="brand-card__tag">JSW Steel Ltd</span>
@@ -147,7 +166,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/SAIL.jpg" alt="SAIL - Steel Authority of India Limited" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/SAIL.jpg" alt="SAIL - Steel Authority of India Limited" loading="lazy" decoding="async" width="735" height="490">
               </div>
               <span class="brand-card__name">SAIL</span>
               <span class="brand-card__tag">Steel Authority of India</span>
@@ -156,7 +175,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/Jindal Panther.jpg" alt="Jindal Panther - Jindal Steel and Power Authorized Producer" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/Jindal Panther.jpg" alt="Jindal Panther - Jindal Steel and Power Authorized Producer" loading="lazy" decoding="async" width="735" height="490">
               </div>
               <span class="brand-card__name">Jindal Panther</span>
               <span class="brand-card__tag">Jindal Steel &amp; Power</span>
@@ -165,7 +184,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/Kamdhenu.jpg" alt="Kamdhenu - Kamdhenu Limited Authorized Producer" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/Kamdhenu.jpg" alt="Kamdhenu - Kamdhenu Limited Authorized Producer" loading="lazy" decoding="async" width="735" height="490">
               </div>
               <span class="brand-card__name">Kamdhenu</span>
               <span class="brand-card__tag">Kamdhenu Limited</span>
@@ -174,7 +193,7 @@
           <div class="grid__span-2" role="listitem">
             <div class="brand-card">
               <div class="brand-card__logo-wrap">
-                <img class="brand-card__logo" src="assets/images/Vizag Steel.jpg" alt="Vizag Steel - RINL Authorized Producer" loading="lazy">
+                <img class="brand-card__logo" src="assets/images/Vizag Steel.jpg" alt="Vizag Steel - RINL Authorized Producer" loading="lazy" decoding="async" width="735" height="490">
               </div>
               <span class="brand-card__name">Vizag Steel</span>
               <span class="brand-card__tag">RINL Navratna PSU</span>
@@ -277,48 +296,49 @@
         </div>
         <div class="card-grid card-grid--3">
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/TMT BARS.jpg" alt="Bundles of corrosion-resistant Shyam Steel TMT reinforcement rebars for construction" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame">
+              <img src="assets/images/TMT BARS.jpg" alt="Steel TMT reinforcement bars stacked at a building construction site" loading="lazy" decoding="async" width="1024" height="1024">
             </div>
             <h3 data-i18n="homeTmtTitle">TMT Bars</h3>
             <p data-i18n="homeTmtDescription">Reinforcement bars in popular grades and sizes, for many types of building projects.</p>
             <a class="btn-outline" href="pages/products-grade.html"><span data-i18n="homeTmtCta">Explore TMT grades</span><span class="icon-dir" aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/Structural Steel.jpg" alt="Heavy structural steel framing, I-beams and columns for multi-story buildings" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame">
+              <img src="assets/images/Structural Steel.jpg" alt="Heavy structural steel framing, I-beams and columns for multi-story buildings" loading="lazy" decoding="async" width="736" height="1104" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
             </div>
             <h3 data-i18n="homeStructuralTitle">Structural Steel</h3>
             <p data-i18n="homeStructuralDescription">Sections and flat steel sourced to your project's dimensions and specifications.</p>
             <a class="btn-outline" href="pages/products.html"><span data-i18n="homeStructuralCta">View steel range</span><span class="icon-dir" aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/Binding Wire.jpg" alt="APL Apollo and SG Mart premium galvanized construction binding wire coils" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <img src="assets/images/Binding Wire.jpg" alt="APL Apollo and SG Mart premium galvanized construction binding wire coils" loading="lazy" decoding="async" width="736" height="920" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
             </div>
             <h3 data-i18n="homeWireTitle">Binding Wire</h3>
             <p data-i18n="homeWireDescription">Everyday site supplies for tying steel reinforcement and helping keep daily project work moving.</p>
             <a class="btn-outline" href="pages/price-enquiry.html"><span data-i18n="homeWireCta">Ask about availability</span><span class="icon-dir" aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/MS Plates & Sheets.jpg" alt="Goel Steel heavy industrial mild steel plates and chequered sheets" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <img src="assets/images/MS Plates & Sheets.jpg" alt="Goel Steel heavy industrial mild steel plates and chequered sheets" loading="lazy" decoding="async" width="1080" height="1350" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
             </div>
             <h3 data-i18n="homePlatesTitle">MS Plates &amp; Sheets</h3>
             <p data-i18n="homePlatesDescription">Hot-rolled mild steel plates, chequered floor sheets, and boiler-quality plates cut to project thickness from 5 mm to 63 mm.</p>
             <a class="btn-outline" href="pages/products.html"><span data-i18n="homePlatesCta">Explore steel plates</span><span class="icon-dir" aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/Hollow Sections & Pipes.jpg" alt="Panchtatva Indij square and rectangular hollow section steel pipes" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <img src="assets/images/Hollow Sections & Pipes.jpg" alt="Panchtatva Indij square and rectangular hollow section steel pipes" loading="lazy" decoding="async" width="736" height="736" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
             </div>
             <h3 data-i18n="homeHollowTitle">Hollow Sections &amp; Pipes</h3>
             <p data-i18n="homeHollowDescription">Square (SHS), rectangular (RHS), and circular structural steel tubes for pre-engineered buildings and roof trusses.</p>
             <a class="btn-outline" href="pages/products.html"><span data-i18n="homeHollowCta">View hollow sections</span><span class="icon-dir" aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <div class="product-card__image">
-              <img src="assets/images/Cut & Bend Rebar (BBS).jpg" alt="Prefabricated cut-and-bend rebar stirrups tied into structural beam reinforcement cage" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+            <div class="product-card__image media-frame">
+              <!-- Replace with: unbranded cut-and-bend rebar fabrication photo -->
+              <img src="assets/images/Cut & Bend Rebar (BBS).jpg" alt="Prefabricated cut-and-bend rebar stirrups tied into structural beam reinforcement cage" loading="lazy" decoding="async" width="405" height="720" onerror="this.onerror=null;this.src='assets/images/placeholder.jpg';">
             </div>
             <h3 data-i18n="homeBbsTitle">Cut &amp; Bend Rebar (BBS)</h3>
             <p data-i18n="homeBbsDescription">Factory-fabricated column links, stirrups, and custom shapes bent to your structural Bar Bending Schedule to reduce site scrap.</p>

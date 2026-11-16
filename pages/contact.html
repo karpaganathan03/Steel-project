@@ -9,15 +9,17 @@
   <meta property="og:title" content="Contact | ForgeLine Steel">
   <meta property="og:description" content="Talk to the ForgeLine Steel team about your next project.">
   <title>Contact ForgeLine Steel</title>
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1E2E'/%3E%3Cpath d='M12 14h40v9H12zm0 14h40v9H12zm0 14h40v9H12z' fill='%23D8AF36'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/themes.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <link rel="stylesheet" href="../assets/css/contact.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/media.css">
   <script defer src="../assets/js/main.js"></script>
   <script defer src="../assets/js/theme.js"></script>
   <script defer src="../assets/js/direction.js"></script>
@@ -25,6 +27,8 @@
   <script defer src="../assets/js/scroll-progress.js"></script>
   <script defer src="../assets/js/data.js"></script>
   <script defer src="../assets/js/forms.js"></script>
+  <script defer src="../assets/js/animations.js"></script>
+  <script defer src="../assets/js/media.js"></script>
 </head>
 <body id="top" data-base="..">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -37,42 +41,52 @@
 
 
 
-    <section class="page-hero contact__hero" aria-labelledby="page-title">
+    <section class="page-hero contact__hero" id="contact-hero" aria-labelledby="page-title">
       <div class="container page-hero__container">
-        <div class="page-hero__card">
-          <div class="page-hero__grid">
-            <div class="page-hero__content-col">
-              <span class="eyebrow page-hero__eyebrow" data-i18n="contactEyebrow">Get in touch</span>
-              <h1 id="page-title" data-i18n="contactPageTitle">We’re ready to talk steel.</h1>
-              <p data-i18n="contactPageDescription">Ask a question, check availability or tell us about your next project. Our team will help you find the right next step.</p>
-              <div class="hero__actions">
-                <a class="btn-primary btn-primary--pill btn-primary--lg" href="#contact-form">Send Message <span class="icon-dir" aria-hidden="true">→</span></a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="tel:+919874561230">+91 98745 61230</a>
-              </div>
+        <div class="page-hero__grid">
+          <!-- Left: Content -->
+          <div class="page-hero__content-col">
+            <div class="page-hero__badge">
+              <span class="page-hero__badge-icon" aria-hidden="true">🛡</span>
+              <span class="eyebrow" data-i18n="contactEyebrow">Get in touch</span>
             </div>
-            <div class="page-hero__media-col">
-              <div class="page-hero__image-frame">
-                <img class="page-hero__image" src="../assets/images/conatct  Hero.jpg" alt="ForgeLine steel customer support and regional supply network" loading="eager">
+            <h1 id="page-title">
+              <span class="hero__title-white" data-i18n="contactPageTitle">We’re ready to</span>
+              <span class="hero__title-accent">talk steel.</span>
+            </h1>
+            <p class="page-hero__lead" data-i18n="contactPageDescription">Ask a question, check availability or tell us about your next project. Our team will help you find the right next step.</p>
+            <div class="hero__actions">
+              <a class="btn-primary btn-primary--pill btn-primary--lg" href="#contact-form">Send Message <span class="icon-dir" aria-hidden="true">→</span></a>
+              <a class="btn-secondary btn-secondary--pill btn-secondary--lg" href="tel:+919874561230">+91 98745 61230</a>
+            </div>
+
+            <div class="page-hero__proof" aria-label="Contact highlights">
+              <div class="page-hero__proof-item">
+                <strong>Virudhunagar</strong>
+                <span>Regional stockyard</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>Mon–Sat</strong>
+                <span>9:00 AM – 6:00 PM</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>Direct Support</strong>
+                <span>Technical guidance</span>
               </div>
             </div>
           </div>
-          <div class="page-hero__proof" aria-label="Contact highlights">
-            <div class="page-hero__proof-item">
-              <strong>Virudhunagar</strong>
-              <span>Regional stockyard</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>Mon–Sat</strong>
-              <span>9:00 AM – 6:00 PM</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>Direct Support</strong>
-              <span>Technical guidance</span>
+
+          <!-- Right: Media Showcase Frame with Dedicated Named Hero Image -->
+          <div class="page-hero__media-col">
+            <div class="page-hero__image-frame media-frame media--poster">
+              <!-- Replace with: steel supplier team consulting with a construction customer -->
+              <img class="page-hero__image" src="../assets/images/conatct  Hero.jpg" alt="Steel supplier team discussing a construction project with a customer" loading="eager" decoding="async" width="736" height="736" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
           </div>
         </div>
       </div>
     </section>
+    </div>
 
     <section class="section" aria-labelledby="contact-information-heading">
       <div class="container">
@@ -88,28 +102,40 @@
               <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             </span>
             <h3 data-i18n="contactAddressTitle">Address</h3>
-            <p data-i18n="contactAddress">146(1), Sunvale Complex, Virudhunagar</p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=146%281%29%2C%20Sunvale%20Complex%2C%20Virudhunagar" target="_blank" rel="noopener" aria-label="Get directions to 146(1), Sunvale Complex, Virudhunagar" data-i18n-aria-label="contactDirectionsAria">
+              <span data-i18n="contactAddress">146(1), Sunvale Complex, Virudhunagar</span>
+              <span class="text-link"><span data-i18n="contactDirections">Get directions</span><span class="icon-dir" aria-hidden="true">→</span></span>
+            </a>
           </article>
           <article class="contact-card">
             <span class="contact-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 2a15 15 0 0 0 5.5 5.5l2-2.5 5 2v4a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z"/></svg>
             </span>
             <h3 data-i18n="contactPhoneTitle">Phone</h3>
-            <a href="tel:+919874561230" dir="ltr"><bdi dir="ltr">+91 98745 61230</bdi></a>
+            <a href="tel:+919874561230" dir="ltr" aria-label="Call ForgeLine Steel at +91 98745 61230" data-i18n-aria-label="contactCallAria">
+              <bdi dir="ltr">+91 98745 61230</bdi>
+              <span class="text-link"><span data-i18n="contactCallNow">Call now</span><span class="icon-dir" aria-hidden="true">→</span></span>
+            </a>
           </article>
           <article class="contact-card">
             <span class="contact-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.2-3.6A7.5 7.5 0 1 1 20 11.5Z"/><path d="M9 9.2c.4 2.1 1.7 3.4 3.8 3.8"/></svg>
+              <svg class="contact-icon--whatsapp" viewBox="0 0 24 24">
+                <path d="M12 2.25a9.75 9.75 0 0 0-8.34 14.8L2.4 21.6l4.68-1.23A9.75 9.75 0 1 0 12 2.25Z"/>
+                <path class="contact-icon__cutout" d="M8.1 6.8c-.3 0-.7.1-1 .5-.4.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.3 2.4 3.8 5.9 5.2 2.9 1.2 3.5.9 4.1.8.6-.1 1.9-.8 2.1-1.5.3-.8.3-1.4.2-1.5-.1-.1-.4-.2-.8-.4l-2.2-1c-.3-.1-.6-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.4-.6.1-.2 0-.4 0-.6L9.6 7.4c-.2-.4-.4-.5-.7-.5H8.1Z"/>
+              </svg>
             </span>
             <h3>WhatsApp</h3>
-            <a href="https://wa.me/919874561230" target="_blank" rel="noopener noreferrer" dir="ltr"><bdi dir="ltr">+91 98745 61230</bdi></a>
+            <a href="https://wa.me/919874561230" target="_blank" rel="noopener noreferrer" dir="ltr" aria-label="Chat with ForgeLine Steel on WhatsApp" data-i18n-aria-label="contactWhatsAppAria">
+              <bdi dir="ltr">+91 98745 61230</bdi>
+              <span class="text-link"><span data-i18n="contactChatWhatsApp">Chat on WhatsApp</span><span class="icon-dir" aria-hidden="true">→</span></span>
+            </a>
           </article>
           <article class="contact-card">
             <span class="contact-card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             </span>
             <h3 data-i18n="contactHoursTitle">Working hours</h3>
-            <p data-i18n="contactHours">Monday–Saturday, 9:00 AM–6:00 PM IST (UTC+05:30).</p>
+            <p data-i18n="contactHours">Mon-Sat, 9:00 AM - 6:00 PM IST</p>
           </article>
         </div>
       </div>

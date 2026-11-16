@@ -61,11 +61,13 @@
     const host = document.getElementById("site-header");
     if (!host) return;
 
+    const brandTitle = data.brand.logo + " " + data.brand.descriptor;
+
     host.innerHTML =
       '<header class="site-header"><div class="container site-header__inner">' +
-      '<a class="brand" href="' + localUrl("index.html") + '">' +
-      '<img src="' + localUrl("assets/icons/favicon.svg") + '" alt="" width="38" height="38">' +
-      '<span>' + data.brand.logo + '<span class="brand__tag">' + data.brand.descriptor + "</span></span></a>" +
+      '<a class="brand" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
+      '<img class="brand__logo" src="' + localUrl("assets/images/logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="eager" decoding="async">' +
+      '<span class="visually-hidden">' + brandTitle + "</span></a>" +
       '<nav class="site-nav" id="primary-navigation" aria-label="Main navigation" aria-hidden="true" inert>' +
       '<ul class="site-nav__links">' + renderNavigation(data) + "</ul>" +
       '<div class="site-nav__actions">' +
@@ -110,12 +112,14 @@
         icon(item.icon) + "</a>";
     }).join("");
 
+    const brandTitle = data.brand.logo + " " + data.brand.descriptor;
+
     host.innerHTML =
       '<footer class="site-footer"><div class="container">' +
       '<div class="site-footer__grid">' +
-      '<div class="site-footer__about"><a class="brand" href="' + localUrl("index.html") + '">' +
-      '<img src="' + localUrl("assets/icons/favicon.svg") + '" alt="" width="38" height="38"><span>' + data.brand.logo +
-      '<span class="brand__tag">' + data.brand.descriptor + "</span></span></a>" +
+      '<div class="site-footer__about"><a class="brand brand--footer" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
+      '<img class="brand__logo" src="' + localUrl("assets/images/logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="lazy" decoding="async">' +
+      '<span class="visually-hidden">' + brandTitle + "</span></a>" +
       '<p data-i18n="footerAbout">' + data.i18n.en.footerAbout + "</p></div>" +
       '<div><h2 class="site-footer__title" data-i18n="footerQuickTitle">' + data.i18n.en.footerQuickTitle +
       '</h2><ul class="site-footer__links">' + footerLinks(quickLinks) + "</ul></div>" +
@@ -198,9 +202,10 @@
   window.addEventListener("error", function (event) {
     if (event.target && event.target.tagName === "IMG") {
       const img = event.target;
+      if (img.closest(".media-frame")) return;
       if (!img.dataset.hasFallback) {
         img.dataset.hasFallback = "true";
-        img.src = inPagesDirectory ? "../images/placeholder.jpg" : "images/placeholder.jpg";
+        img.src = localUrl("assets/images/placeholder.jpg");
       }
     }
   }, true);

@@ -228,6 +228,8 @@
   .size-product-card__image {
     height: 100%;
     min-height: 220px;
+    border-bottom: none;
+    border-inline-end: 1px solid var(--color-border);
   }
 }
 

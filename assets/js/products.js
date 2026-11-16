@@ -27,7 +27,7 @@
 
     function card(product) {
       return '<article class="product-card">' +
-        '<div class="product-card__image"><img src="' + base + '/assets/images/products/' + product.image + '" alt="' + product.name + '" loading="lazy"></div>' +
+        '<div class="product-card__image media-frame"><img src="' + base + '/assets/images/products/' + product.image + '" alt="' + product.name + '" width="1200" height="900" loading="lazy" decoding="async"></div>' +
         '<div class="product-card__body"><span class="product-card__meta">' + product.category + '</span>' +
         '<h3>' + product.name + '</h3><p>' + product.details + '</p>' +
         '<p><strong>Grade:</strong> ' + product.grade + ' &nbsp; <strong>Size:</strong> ' + product.size + '</p>' +
@@ -70,6 +70,16 @@
     const base = document.body.dataset.base || "..";
     let activeSize = tabs[0].dataset.sizeFilter;
 
+    const SIZE_IMAGE_MAP = {
+      "8 mm": "8mm.jpg",
+      "10 mm": "10mm.jpg",
+      "12 mm": "12mm.jpg",
+      "16 mm": "16mm.jpg",
+      "20 mm": "20mm.jpg",
+      "25 mm": "25mm.jpg",
+      "32 mm": "32mm.jpg"
+    };
+
     function text(key) {
       return data.i18n.en[key] || key;
     }
@@ -109,19 +119,30 @@
         element("p", "size-detail__applications", size.applications.en)
       );
 
+      const imageName = size.image || SIZE_IMAGE_MAP[size.size] || "placeholder.jpg";
+      const imagePath = base + "/assets/images/" + imageName;
+
       const image = element("img", "", undefined);
-      image.src = base + "/assets/images/products/rebar.svg";
-      image.alt = text("sizeProductImageAlt");
+      image.src = imagePath;
+      image.alt = size.size + " " + text("sizeProductImageAlt");
+      image.width = 1200;
+      image.height = 900;
       image.loading = "lazy";
-      const figure = element("figure", "size-detail__image");
+      image.decoding = "async";
+      const figure = element("figure", "size-detail__image media-frame media--poster media--missing");
       figure.appendChild(image);
       detail.append(content, figure);
 
       const product = element("article", "size-product-card");
+      const productMedia = element("div", "size-product-card__media media-frame media--poster media--missing");
       const productImage = element("img", "size-product-card__image");
-      productImage.src = base + "/assets/images/products/rebar.svg";
-      productImage.alt = "";
+      productImage.src = imagePath;
+      productImage.alt = size.size + " " + text("sizeProductName");
+      productImage.width = 1200;
+      productImage.height = 900;
       productImage.loading = "lazy";
+      productImage.decoding = "async";
+      productMedia.appendChild(productImage);
       const productBody = element("div", "size-product-card__body");
       productBody.append(
         element("span", "product-card__meta", text("sizeProductName")),
@@ -138,7 +159,7 @@
       );
       link.lastElementChild.setAttribute("aria-hidden", "true");
       productBody.appendChild(link);
-      product.append(productImage, productBody);
+      product.append(productMedia, productBody);
 
       panel.replaceChildren(detail, product);
       panel.setAttribute("aria-labelledby", tabs.find(function (tab) {
@@ -225,6 +246,19 @@
     const base = document.body.dataset.base || "..";
     let activeGrade = "all";
 
+    const GRADE_IMAGE_MAP = {
+      "Fe 415": "Fe 415.jpg",
+      "Fe 500": "Fe 500.jpg",
+      "Fe 500D": "Fe 500D.jpg",
+      "Fe 550": "Fe 550.jpg",
+      "Fe 550D": "Fe 550D.jpg",
+      "Fe 600": "Fe 600.jpg",
+      "Fe 415D": "FE 415D.jpg",
+      "Fe 500S": "FE 500S.jpg"
+    };
+    const POSTER_GRADES = new Set(["Fe 550", "Fe 550D", "Fe 600", "Fe 415D", "Fe 500S"]);
+    const NEUTRAL_GRADES = new Set(["Fe 415"]);
+
     function text(key) {
       return data.i18n.en[key] || key;
     }
@@ -238,8 +272,31 @@
 
     function renderCard(grade) {
       const card = element("article", "grade-card");
+
+      const rawName = grade.name || "";
+      const imageName = grade.image || GRADE_IMAGE_MAP[rawName] || rawName + ".jpg";
+      let mediaClass = "";
+      if (POSTER_GRADES.has(rawName)) {
+        mediaClass = " media--poster media--missing";
+      } else if (NEUTRAL_GRADES.has(rawName)) {
+        mediaClass = " media--missing";
+      }
+      const imageBox = element("div", "grade-card__image product-card__image media-frame" + mediaClass);
+      const img = element("img", "", undefined);
+      img.src = base + "/assets/images/" + imageName;
+      img.alt = (grade.displayTitle || grade.name) + " TMT reinforcement steel rebar";
+      img.width = 1200;
+      img.height = 900;
+      img.loading = "lazy";
+      img.decoding = "async";
+      if (rawName === "Fe 415D" || rawName === "Fe 500S") {
+        imageBox.appendChild(document.createComment(" Replace with: " + rawName + " TMT bar photo "));
+      }
+      imageBox.appendChild(img);
+      card.appendChild(imageBox);
+
       const header = element("div", "grade-card__header");
-      const title = element("h3", "", grade.name);
+      const title = element("h3", "", grade.displayTitle || grade.name);
       const badge = element("span", "badge", grade.name);
       header.append(title, badge);
       card.appendChild(header);

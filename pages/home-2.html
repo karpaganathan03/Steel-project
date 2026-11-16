@@ -9,15 +9,17 @@
   <meta property="og:title" content="Our Approach | ForgeLine Steel">
   <meta property="og:description" content="A detailed guide to steel products, specifications and project support from ForgeLine Steel.">
   <title>Our Approach | ForgeLine Steel</title>
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../assets/icons/favicon.svg">
-  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1E2E'/%3E%3Cpath d='M12 14h40v9H12zm0 14h40v9H12zm0 14h40v9H12z' fill='%23D8AF36'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/themes.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <link rel="stylesheet" href="../assets/css/home-2.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/media.css">
   <script defer src="../assets/js/main.js"></script>
   <script defer src="../assets/js/theme.js"></script>
   <script defer src="../assets/js/direction.js"></script>
@@ -25,42 +27,52 @@
   <script defer src="../assets/js/scroll-progress.js"></script>
   <script defer src="../assets/js/data.js"></script>
   <script defer src="../assets/js/home-2.js"></script>
+  <script defer src="../assets/js/animations.js"></script>
+  <script defer src="../assets/js/media.js"></script>
 </head>
 <body id="top" data-base="..">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div id="site-header"></div>
   <main id="main-content">
-    <section class="page-hero home-story-hero" aria-labelledby="page-title">
+    <section class="page-hero home-story-hero" id="home-2-hero" aria-labelledby="page-title">
       <div class="container page-hero__container">
-        <div class="page-hero__card">
-          <div class="page-hero__grid">
-            <div class="page-hero__content-col">
-              <span class="eyebrow page-hero__eyebrow">The ForgeLine difference</span>
-              <h1 id="page-title" data-i18n="storyPageTitle">Built on trust. Ready for what’s next.</h1>
-              <p data-i18n="storyPageDescription">We bring dependable steel products and a human approach to every order, helping builders move from plan to progress.</p>
-              <div class="home-story-hero__links">
-                <a class="btn-primary btn-primary--pill btn-primary--lg" href="price-enquiry.html">Discuss your project <span class="icon-dir" aria-hidden="true">→</span></a>
-                <a class="btn-outline btn-outline--pill btn-outline--lg" href="../index.html">Explore steel supply and products</a>
-              </div>
+        <div class="page-hero__grid">
+          <!-- Left: Content -->
+          <div class="page-hero__content-col">
+            <div class="page-hero__badge">
+              <span class="page-hero__badge-icon" aria-hidden="true">🛡</span>
+              <span class="eyebrow">The ForgeLine difference</span>
             </div>
-            <div class="page-hero__media-col">
-              <div class="page-hero__image-frame">
-                <img class="page-hero__image" src="../assets/images/Home page Hero 2.jpg" alt="Modern city and infrastructure built on certified TMT steel foundation" loading="eager">
+            <h1 id="page-title">
+              <span class="hero__title-white" data-i18n="storyPageTitle">Built on trust.</span>
+              <span class="hero__title-accent">Ready for what’s next.</span>
+            </h1>
+            <p class="page-hero__lead" data-i18n="storyPageDescription">We bring dependable steel products and a human approach to every order, helping builders move from plan to progress.</p>
+            <div class="hero__actions">
+              <a class="btn-primary btn-primary--pill btn-primary--lg" href="price-enquiry.html">Discuss your project <span class="icon-dir" aria-hidden="true">→</span></a>
+              <a class="btn-outline btn-outline--pill btn-outline--lg" href="../index.html">Explore steel supply and products</a>
+            </div>
+
+            <div class="page-hero__proof" aria-label="Key highlights">
+              <div class="page-hero__proof-item">
+                <strong>1.25M+</strong>
+                <span>Tonnes steel supplied</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>30+ Yrs</strong>
+                <span>Metallurgical expertise</span>
+              </div>
+              <div class="page-hero__proof-item">
+                <strong>100% MTC</strong>
+                <span>Batch test certified</span>
               </div>
             </div>
           </div>
-          <div class="page-hero__proof" aria-label="Key highlights">
-            <div class="page-hero__proof-item">
-              <strong>1.25M+</strong>
-              <span>Tonnes steel supplied</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>30+ Yrs</strong>
-              <span>Metallurgical expertise</span>
-            </div>
-            <div class="page-hero__proof-item">
-              <strong>100% MTC</strong>
-              <span>Batch test certified</span>
+
+          <!-- Right: Media Showcase Frame with Named Hero Image -->
+          <div class="page-hero__media-col">
+            <div class="page-hero__image-frame media-frame media--poster">
+              <img class="page-hero__image" src="../assets/images/Home page Hero 2.jpg" alt="Modern city and infrastructure built on certified TMT steel foundation" loading="eager" decoding="async" width="736" height="781" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
           </div>
         </div>
@@ -97,7 +109,9 @@
           <a class="btn-primary" href="price-enquiry.html">Start a conversation <span class="icon-dir" aria-hidden="true">→</span></a>
         </div>
         <figure class="home-story-about__figure">
-          <img class="split__image" src="../assets/images/about/steel-engineer.jpg" alt="Metallurgical engineer inspecting steel specifications" loading="lazy">
+          <div class="media-frame">
+            <img class="split__image" src="../assets/images/about/steel-engineer.jpg" alt="Metallurgical engineer inspecting steel specifications" loading="lazy" decoding="async" width="1200" height="896">
+          </div>
           <figcaption>We help turn a material list into a clear supply enquiry.</figcaption>
         </figure>
       </div>
@@ -117,40 +131,46 @@
         </div>
         <div class="home-story-range">
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/TMT BARS.jpg" alt="Bundles of corrosion-resistant Shyam Steel TMT reinforcement rebars for construction" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame">
+              <!-- Replace with: mild steel angle and fabrication photo -->
+              <img src="../assets/images/Mild Steel Angles.jpg" alt="Mild steel angles - Equal and unequal steel angles for frames, supports, and fabrication" loading="lazy" decoding="async" width="736" height="736">
             </div>
-            <div><span class="product-card__meta">Reinforcement</span><h3>TMT reinforcement bars</h3><p>Common reinforcement grades and diameters for residential, commercial and infrastructure projects. Select specifications with your project engineer.</p><a class="text-link" href="products-grade.html">Explore TMT grades <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Structural sections</span><h3>Mild Steel Angles</h3><p>Equal and unequal steel angles for frames, supports, bracing, and fabrication, specified by size and length.</p><a class="text-link" href="products.html">Browse angle options <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/Structural Steel.jpg" alt="Heavy structural steel framing, I-beams and columns for multi-story buildings" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame">
+              <!-- Replace with: steel channels and beams photo -->
+              <img src="../assets/images/Channels and Beams.jpg" alt="Channels and beams - Structural steel channels and beams for building frames and construction" loading="lazy" decoding="async" width="709" height="942" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
-            <div><span class="product-card__meta">Structural</span><h3>Sections and beams</h3><p>Structural products sourced to specified profiles, dimensions and project requirements, subject to supplier availability.</p><a class="text-link" href="products.html">Browse products <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Building frames</span><h3>Channels and Beams</h3><p>Steel channels and beams for frames and building projects, supplied by profile, size, length, and required quantity.</p><a class="text-link" href="products.html">Enquire about channels <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/MS Plates & Sheets.jpg" alt="Goel Steel heavy industrial mild steel plates and chequered sheets" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <!-- Replace with: flat bars and plates photo -->
+              <img src="../assets/images/Flat Bars and Plates.jpg" alt="Flat bars and plates - Flat steel for brackets, base plates, and fabrication" loading="lazy" decoding="async" width="800" height="800" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
-            <div><span class="product-card__meta">Flat products</span><h3>Plates and sheets</h3><p>Hot-rolled mild steel plates, chequered floor sheets, and boiler-quality plates cut to project thickness from 5 mm to 63 mm.</p><a class="text-link" href="products.html">Check product range <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Flat steel</span><h3>Flat Bars and Plates</h3><p>Flat steel for brackets, base plates, and fabrication, specified by thickness, width, length, and quantity.</p><a class="text-link" href="price-enquiry.html">Request flat steel <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/Binding Wire.jpg" alt="APL Apollo and SG Mart premium galvanized construction binding wire coils" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <!-- Replace with: round and square steel bars photo -->
+              <img src="../assets/images/Round and Square Bars.jpg" alt="Round and square bars - Solid steel bars for machining, engineering, and fabrication" loading="lazy" decoding="async" width="736" height="736" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
-            <div><span class="product-card__meta">Site essentials</span><h3>Binding wire and more</h3><p>Everyday site supplies for tying reinforcement steel securely, keeping daily fabrication and concreting moving on schedule.</p><a class="text-link" href="price-enquiry.html">Ask about availability <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Solid sections</span><h3>Round and Square Bars</h3><p>Solid bars for machining and fabrication, with round or square sections selected by size and required length.</p><a class="text-link" href="products.html">Check bar availability <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/Hollow Sections & Pipes.jpg" alt="Panchtatva Indij square and rectangular hollow section steel pipes" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <!-- Replace with: welded reinforcement mesh photo -->
+              <img src="../assets/images/Wire Mesh and Reinforcement.jpg" alt="Wire mesh and reinforcement mesh - Welded steel mesh for concrete reinforcement and site work" loading="lazy" decoding="async" width="1024" height="1024" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
-            <div><span class="product-card__meta">Tubular sections</span><h3>Hollow sections &amp; pipes</h3><p>Square (SHS), rectangular (RHS), and circular structural tubes for pre-engineered steel buildings, roof framing, and architectural trusses.</p><a class="text-link" href="products.html">Browse tubular range <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Welded products</span><h3>Wire Mesh and Reinforcement Mesh</h3><p>Welded mesh for concrete reinforcement and site applications, specified by wire diameter, sheet size, and spacing.</p><a class="text-link" href="price-enquiry.html">Request mesh details <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
           <article class="home-story-range__card">
-            <div class="product-card__image">
-              <img src="../assets/images/Cut & Bend Rebar (BBS).jpg" alt="Prefabricated cut-and-bend rebar stirrups tied into structural beam reinforcement cage" loading="lazy" onerror="this.onerror=null;this.src='../images/placeholder.jpg';">
+            <div class="product-card__image media-frame media--poster">
+              <!-- Replace with: profiled roofing and cladding sheets photo -->
+              <img src="../assets/images/Roofing and Cladding Sheets.jpg" alt="Roofing and cladding sheets - Profiled steel sheets for industrial roofing and wall cladding" loading="lazy" decoding="async" width="893" height="1064" onerror="this.onerror=null;this.src='../assets/images/placeholder.jpg';">
             </div>
-            <div><span class="product-card__meta">Prefabricated BBS</span><h3>Cut &amp; bend rebar (BBS)</h3><p>Factory-fabricated column links, stirrups, and custom shapes bent to your structural consultant's schedule to cut site scrap and cycle times.</p><a class="text-link" href="price-enquiry.html">Request BBS quote <span class="icon-dir" aria-hidden="true">→</span></a></div>
+            <div><span class="product-card__meta">Roofing and cladding</span><h3>Roofing and Cladding Sheets</h3><p>Profiled sheets for roofing and wall cladding, with material, finish, profile, and cut length specified per order.</p><a class="text-link" href="price-enquiry.html">Ask about cladding sheets <span class="icon-dir" aria-hidden="true">→</span></a></div>
           </article>
         </div>
       </div>
@@ -219,7 +239,7 @@
 
     <section class="section section--muted" aria-labelledby="delivery-heading">
       <div class="container split home-story-delivery">
-        <div><img class="split__image" src="../assets/images/about/warehouse.svg" alt="Illustration of steel goods organized in a warehouse for dispatch" loading="lazy"></div>
+        <div><img class="split__image" src="../assets/images/about/warehouse.svg" alt="Illustration of steel goods organized in a warehouse for dispatch" loading="lazy" decoding="async" width="900" height="600"></div>
         <div>
           <div class="section-heading">
             <span class="section-heading__eyebrow">Delivery and logistics</span>

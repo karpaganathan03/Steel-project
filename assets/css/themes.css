@@ -31,6 +31,7 @@
   --color-overlay-start: rgb(18 24 32 / 85%);
   --color-overlay-mid: rgb(18 24 32 / 65%);
   --color-overlay-soft: rgb(18 24 32 / 20%);
+  --card-image-overlay: transparent;
   --color-overlay-half: rgb(18 24 32 / 50%);
   --color-drawer-overlay: rgb(10 16 24 / 60%);
   --color-header: #FFFFFF;
@@ -39,6 +40,7 @@
   --shadow-raised: 0 16px 36px var(--color-shadow-strong);
   --header-blur: none;
   --hero-gradient: linear-gradient(180deg, rgba(18, 24, 32, 0.72) 0%, rgba(18, 24, 32, 0.58) 100%);
+  --hero-bg-overlay: linear-gradient(180deg, rgba(15, 23, 34, 0.42) 0%, rgba(15, 23, 34, 0.75) 100%);
   --page-hero-gradient: linear-gradient(90deg, rgba(18, 24, 32, 0.88) 0%, rgba(18, 24, 32, 0.65) 100%);
   --hero-card-bg: radial-gradient(circle at 85% 25%, rgba(196, 159, 43, 0.08) 0%, transparent 55%), linear-gradient(145deg, #F0F4F8 0%, #E8EEF4 45%, #F7F1E6 100%);
   --hero-card-border: #DDE3EA;
@@ -78,6 +80,7 @@
   --color-overlay-start: rgb(8 14 20 / 92%);
   --color-overlay-mid: rgb(8 14 20 / 75%);
   --color-overlay-soft: rgb(8 14 20 / 30%);
+  --card-image-overlay: transparent;
   --color-overlay-half: rgb(8 14 20 / 60%);
   --color-drawer-overlay: rgb(0 0 0 / 70%);
   --color-header: #121922;
@@ -86,6 +89,7 @@
   --shadow-raised: 0 18px 40px var(--color-shadow-strong);
   --header-blur: none;
   --hero-gradient: linear-gradient(180deg, rgba(8, 14, 20, 0.85) 0%, rgba(8, 14, 20, 0.70) 100%);
+  --hero-bg-overlay: linear-gradient(180deg, rgba(8, 14, 20, 0.55) 0%, rgba(8, 14, 20, 0.88) 100%);
   --page-hero-gradient: linear-gradient(90deg, rgba(8, 14, 20, 0.92) 0%, rgba(8, 14, 20, 0.78) 100%);
   --hero-card-bg: radial-gradient(circle at 85% 25%, rgba(216, 175, 54, 0.12) 0%, transparent 55%), linear-gradient(145deg, #0F1722 0%, #15202D 50%, #1A2533 100%);
   --hero-card-border: #263544;
@@ -103,4 +107,8 @@ body,
 .table-scroll,
 .style-panel {
   transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+[data-theme="dark"] .site-header .brand__logo {
+  filter: brightness(1.08) drop-shadow(0 2px 8px rgba(216, 175, 54, 0.15));
 }
