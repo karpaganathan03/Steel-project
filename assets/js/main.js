@@ -66,7 +66,7 @@
     host.innerHTML =
       '<header class="site-header"><div class="container site-header__inner">' +
       '<a class="brand" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
-      '<img class="brand__logo" src="' + localUrl("assets/images/logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="eager" decoding="async">' +
+      '<img class="brand__logo" src="' + localUrl("assets/images/Logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="eager" decoding="async">' +
       '<span class="visually-hidden">' + brandTitle + "</span></a>" +
       '<nav class="site-nav" id="primary-navigation" aria-label="Main navigation" aria-hidden="true" inert>' +
       '<ul class="site-nav__links">' + renderNavigation(data) + "</ul>" +
@@ -80,7 +80,9 @@
       '<a class="btn-primary btn-primary--sm header-quote" href="' + pageUrl("price-enquiry.html") + '"><span data-i18n="quoteCta">Get Quote</span></a>' +
       "</div></nav>" +
       '<button class="icon-button nav-toggle" type="button" aria-label="' + data.i18n.en.openMenu + '" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>' +
-      '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button>' +
+      '<svg class="nav-toggle__icon nav-toggle__icon--open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg>' +
+      '<svg class="nav-toggle__icon nav-toggle__icon--close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18L18 6M6 6l12 12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>' +
+      '</button>' +
       "</div></header>" +
       '<button class="nav-backdrop" type="button" tabindex="-1" aria-hidden="true" aria-label="' + data.i18n.en.closeMenuOverlay + '" data-nav-close></button>' +
       '<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" data-scroll-progress></div></div>';
@@ -90,50 +92,109 @@
     const host = document.getElementById("site-footer");
     if (!host) return;
 
+    const brandTitle = data.brand.logo + " " + data.brand.descriptor;
+    const i18n = data.i18n.en;
+
+    function resolvePageHref(href) {
+      const parts = href.split("#");
+      const file = parts[0];
+      const hash = parts[1] ? "#" + parts[1] : "";
+      return (file === "index.html" ? localUrl("index.html") : localUrl("pages/" + file)) + hash;
+    }
+
     const quickLinks = [
-      { key: "navHomeMain", href: "index.html" },
+      { key: "footerAboutTitle", href: "index.html" },
       { key: "navHomeDetailed", href: "home-2.html" },
-      { key: "navEnquiry", href: "price-enquiry.html" },
-      { key: "navContact", href: "contact.html" }
+      { key: "navContact", href: "contact.html" },
+      { key: "footerCustomers", href: "home-2.html#testimonials" }
     ];
     const productLinks = [
       { key: "navProducts", href: "products.html" },
       { key: "navGrade", href: "products-grade.html" },
-      { key: "navSize", href: "products-size.html" }
+      { key: "navSize", href: "products-size.html" },
+      { key: "navEnquiry", href: "price-enquiry.html" }
     ];
+
     function footerLinks(links) {
       return links.map(function (item) {
-        return '<li><a href="' + pageUrl(item.href) + '" data-i18n="' + item.key + '">' + data.i18n.en[item.key] + "</a></li>";
+        return '<li><a href="' + resolvePageHref(item.href) + '" data-i18n="' + item.key + '">' + i18n[item.key] + "</a></li>";
       }).join("");
     }
 
     const socials = data.socialLinks.map(function (item) {
-      return '<a href="' + item.url + '" aria-label="' + data.i18n.en[item.key] + '" data-i18n-aria-label="' + item.key + '">' +
+      return '<a href="' + item.url + '" aria-label="' + i18n[item.key] + '" data-i18n-aria-label="' + item.key + '">' +
         icon(item.icon) + "</a>";
     }).join("");
 
-    const brandTitle = data.brand.logo + " " + data.brand.descriptor;
+    const digestHeading = i18n.footerDigestHeading || "Get the weekly digest";
+    const digestText = i18n.footerDigestText || "Product news, guides and one good idea every Friday. No spam, ever.";
+    const subscribeBtn = i18n.footerSubscribeBtn || "Subscribe";
+    const emailPlaceholder = i18n.footerEmailPlaceholder || "Your email address";
+    const emailLabel = i18n.footerEmailLabel || "Your email address";
+    const productTitle = i18n.footerProductsTitle || "Product";
+    const companyTitle = i18n.footerCompanyTitle || "Company";
+    const resourcesTitle = i18n.footerResourcesTitle || "Resources";
 
     host.innerHTML =
       '<footer class="site-footer"><div class="container">' +
       '<div class="site-footer__grid">' +
-      '<div class="site-footer__about"><a class="brand brand--footer" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
-      '<img class="brand__logo" src="' + localUrl("assets/images/logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="lazy" decoding="async">' +
+      '<div class="site-footer__digest">' +
+      '<a class="brand brand--footer" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
+      '<img class="brand__logo" src="' + localUrl("assets/images/Logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="lazy" decoding="async">' +
       '<span class="visually-hidden">' + brandTitle + "</span></a>" +
-      '<p data-i18n="footerAbout">' + data.i18n.en.footerAbout + "</p></div>" +
-      '<div><h2 class="site-footer__title" data-i18n="footerQuickTitle">' + data.i18n.en.footerQuickTitle +
-      '</h2><ul class="site-footer__links">' + footerLinks(quickLinks) + "</ul></div>" +
-      '<div><h2 class="site-footer__title" data-i18n="footerProductsTitle">' + data.i18n.en.footerProductsTitle +
-      '</h2><ul class="site-footer__links">' + footerLinks(productLinks) + "</ul></div>" +
-      '<div><h2 class="site-footer__title" data-i18n="footerContactTitle">' + data.i18n.en.footerContactTitle +
-      '</h2><ul class="site-footer__links"><li><span class="footer-address">' + data.brand.address +
-      '</span></li><li><a href="' + pageUrl("contact.html") + '" data-i18n="footerLocation">' + data.i18n.en.footerLocation +
-      '</a></li><li><a href="tel:' + data.brand.phoneHref + '" dir="ltr"><bdi dir="ltr">' + data.brand.phone +
-      "</bdi></a></li></ul><div class=\"social-links\" aria-label=\"" + data.i18n.en.socialLinks + "\" data-i18n-aria-label=\"socialLinks\">" + socials + "</div></div></div>" +
-      '<div class="site-footer__bottom"><p>© <span data-footer-year>' + new Date().getFullYear() +
-      '</span> ' + data.brand.name + '. <span data-i18n="footerCopyright">' + data.i18n.en.footerCopyright +
-      '</span></p><a class="back-to-top" href="#top" aria-label="' + data.i18n.en.backToTop + '"><span class="icon-dir" aria-hidden="true">↑</span></a></div>' +
+      '<h2 class="site-footer__digest-title" data-i18n="footerDigestHeading">' + digestHeading + "</h2>" +
+      '<p class="site-footer__digest-text" data-i18n="footerDigestText">' + digestText + "</p>" +
+      '<form class="site-footer__form" data-footer-form action="#" method="post" novalidate>' +
+      '<div class="site-footer__form-row">' +
+      '<label for="footer-email-input" class="visually-hidden" data-i18n="footerEmailLabel">' + emailLabel + "</label>" +
+      '<input type="email" id="footer-email-input" class="site-footer__input" placeholder="' + emailPlaceholder + '" data-i18n-placeholder="footerEmailPlaceholder" required autocomplete="email">' +
+      '<button type="submit" class="site-footer__btn" data-i18n="footerSubscribeBtn">' + subscribeBtn + "</button>" +
+      "</div></form>" +
+      "</div>" +
+      '<div class="site-footer__nav-grid">' +
+      '<div class="site-footer__col">' +
+      '<h3 class="site-footer__title" data-i18n="footerProductsTitle">' + productTitle + "</h3>" +
+      '<ul class="site-footer__links">' + footerLinks(productLinks) + "</ul></div>" +
+      '<div class="site-footer__col">' +
+      '<h3 class="site-footer__title" data-i18n="footerCompanyTitle">' + companyTitle + "</h3>" +
+      '<ul class="site-footer__links">' + footerLinks(quickLinks) + "</ul></div>" +
+      '<div class="site-footer__col">' +
+      '<h3 class="site-footer__title" data-i18n="footerResourcesTitle">' + resourcesTitle + "</h3>" +
+      '<ul class="site-footer__links">' +
+      '<li><span class="footer-address">' + data.brand.address + "</span></li>" +
+      '<li><a href="tel:' + data.brand.phoneHref + '" dir="ltr"><bdi dir="ltr">' + data.brand.phone + "</bdi></a></li>" +
+      '<li><a href="' + pageUrl("contact.html") + '" data-i18n="footerLocation">' + i18n.footerLocation + "</a></li>" +
+      '<li><a href="' + localUrl("index.html#faq") + '" data-i18n="footerFaq">' + (i18n.footerFaq || "Procurement FAQ") + "</a></li>" +
+      "</ul></div>" +
+      "</div></div>" +
+      '<div class="site-footer__bottom">' +
+      '<div class="social-links" aria-label="' + i18n.socialLinks + '" data-i18n-aria-label="socialLinks">' + socials + "</div>" +
+      '<div class="site-footer__bottom-right">' +
+      '<p class="site-footer__copyright">© <span data-footer-year>' + new Date().getFullYear() +
+      "</span> " + data.brand.name + '. <span data-i18n="footerCopyright">' + i18n.footerCopyright + "</span></p>" +
+      '<div class="site-footer__legal-links">' +
+      '<a class="site-footer__legal-link" href="' + pageUrl("contact.html#privacy") + '" data-i18n="footerPrivacy">' + (i18n.footerPrivacy || "Privacy") + "</a>" +
+      '<a class="site-footer__legal-link" href="' + pageUrl("contact.html#terms") + '" data-i18n="footerTerms">' + (i18n.footerTerms || "Terms") + "</a>" +
+      "</div>" +
+      '<a class="back-to-top" href="#top" aria-label="' + i18n.backToTop + '"><span class="icon-dir" aria-hidden="true">↑</span></a>' +
+      "</div></div>" +
       "</div></footer>";
+
+    const form = host.querySelector("[data-footer-form]");
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const input = form.querySelector('input[type="email"]');
+        const email = input ? input.value.trim() : "";
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showNotification("warning", "Please enter a valid email address.");
+          if (input) input.focus();
+          return;
+        }
+        showNotification("success", "Thank you for subscribing to our weekly digest!");
+        if (input) input.value = "";
+      });
+    }
   }
 
   function showNotification(type, text) {

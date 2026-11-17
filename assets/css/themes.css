@@ -7,6 +7,8 @@
   --color-orange: #C49F2B;
   --color-orange-hover: #A8851E;
   --color-orange-text: #826507;
+  --color-accent-text: #826507;
+  --color-primary-light: #FBF7E9;
   --color-gold: #C49F2B;
   --color-gold-hover: #A8851E;
   --color-gold-soft: #FBF7E9;
@@ -56,6 +58,8 @@
   --color-orange: #D8AF36;
   --color-orange-hover: #E8C14A;
   --color-orange-text: #F5D061;
+  --color-accent-text: #F5D061;
+  --color-primary-light: rgba(216, 175, 54, 0.15);
   --color-gold: #D8AF36;
   --color-gold-hover: #E8C14A;
   --color-gold-soft: #272314;

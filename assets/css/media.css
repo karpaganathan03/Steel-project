@@ -17,7 +17,7 @@
   aspect-ratio: 16 / 10;
 }
 
-.media-frame > img {
+.media-frame>img {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -33,7 +33,7 @@
   transition: opacity 350ms ease, transform 600ms ease;
 }
 
-.media-frame:not(.media--poster) > img {
+.media-frame:not(.media--poster)>img {
   object-fit: cover;
   object-position: var(--focus, center);
   transition: opacity 350ms ease, transform 600ms ease;
@@ -53,13 +53,13 @@
   transition: transform 600ms ease;
 }
 
-.media-frame.media--poster > img {
-  object-fit: contain;
+.media-frame.media--poster>img {
+  object-fit: cover;
   object-position: center;
   transition: opacity 350ms ease, transform 600ms ease;
 }
 
-.media-frame:not(.media--poster):hover > img {
+.media-frame:not(.media--poster):hover>img {
   transform: scale(1.06);
 }
 
@@ -71,18 +71,18 @@
   background: linear-gradient(135deg, var(--color-surface), var(--color-surface-raised));
 }
 
-.media-frame.media--missing > img {
+.media-frame.media--missing>img {
   visibility: hidden;
 }
 
-.home-story-range__card > .product-card__image.media-frame {
+.home-story-range__card>.product-card__image.media-frame {
   display: block;
   padding: 0;
   border: 0;
   box-shadow: none;
 }
 
-.home-story-range__card > .product-card__image.media-frame:not(.media--missing) {
+.home-story-range__card>.product-card__image.media-frame:not(.media--missing) {
   background: var(--color-surface);
 }
 
@@ -98,8 +98,8 @@
   container-type: inline-size;
 }
 
-.product-card > .product-card__body h3,
-.feature-card > h3,
+.product-card>.product-card__body h3,
+.feature-card>h3,
 .products-hub__choice-body h2,
 .products-hub__category h3,
 .home-story-range__card h3,
@@ -109,7 +109,7 @@
   text-wrap: balance;
 }
 
-.feature-card > .product-card__image.media-frame:not(.media--missing) {
+.feature-card>.product-card__image.media-frame:not(.media--missing) {
   background: var(--color-surface);
 }
 
@@ -122,6 +122,11 @@
   border: 0;
   border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: none;
+}
+
+.grade-card__image img {
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
 .media-frame.media--missing::before {
@@ -148,9 +153,12 @@
   transform: translate(-50%, -50%);
 }
 
+/* Hero frames take the hero image's own proportions (from its width/height
+   attributes), so the picture fills the container edge to edge: no letterbox
+   bars and no cropping of the artwork or its text. */
 .hero__image-frame.media-frame,
 .page-hero__image-frame.media-frame {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: auto;
   padding: 0;
   border: 1px solid rgba(216, 175, 54, 0.35);
   border-radius: 20px;
@@ -164,7 +172,7 @@
   border-radius: var(--radius);
 }
 
-.home-story-about__figure > .media-frame {
+.home-story-about__figure>.media-frame {
   border-radius: var(--radius);
 }
 
@@ -208,6 +216,7 @@
 }
 
 @media (min-width: 600px) {
+
   .products-hub__choice-grid,
   .products-hub__category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -220,7 +229,7 @@
   }
 }
 
-.media-ready .media-frame > img:not(.is-loaded),
+.media-ready .media-frame>img:not(.is-loaded),
 .media-ready img.media-frame:not(.is-loaded) {
   opacity: 0;
 }
@@ -299,7 +308,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .media-frame > img,
+
+  .media-frame>img,
   .media-frame.media--poster::before,
   .contact-card,
   .contact-card__icon,
@@ -307,7 +317,7 @@
     transition: none;
   }
 
-  .media-frame:not(.media--poster):hover > img,
+  .media-frame:not(.media--poster):hover>img,
   .media-frame.media--poster:hover::before,
   .contact-card:hover {
     transform: none;
@@ -316,4 +326,22 @@
   .contact-card a:hover .icon-dir {
     translate: none;
   }
+}
+
+/* Hero image fills its frame exactly */
+.hero__image-frame.media-frame>.hero__image,
+.page-hero__image-frame.media-frame>.page-hero__image {
+  position: relative;
+  inset: auto;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+}
+
+.hero__image-frame.media-frame.media--poster::before,
+.page-hero__image-frame.media-frame.media--poster::before {
+  display: none;
 }

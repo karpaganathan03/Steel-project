@@ -129,12 +129,12 @@
       image.height = 900;
       image.loading = "lazy";
       image.decoding = "async";
-      const figure = element("figure", "size-detail__image media-frame media--poster media--missing");
+      const figure = element("figure", "size-detail__image media-frame");
       figure.appendChild(image);
       detail.append(content, figure);
 
       const product = element("article", "size-product-card");
-      const productMedia = element("div", "size-product-card__media media-frame media--poster media--missing");
+      const productMedia = element("div", "size-product-card__media media-frame");
       const productImage = element("img", "size-product-card__image");
       productImage.src = imagePath;
       productImage.alt = size.size + " " + text("sizeProductName");
@@ -256,8 +256,6 @@
       "Fe 415D": "FE 415D.jpg",
       "Fe 500S": "FE 500S.jpg"
     };
-    const POSTER_GRADES = new Set(["Fe 550", "Fe 550D", "Fe 600", "Fe 415D", "Fe 500S"]);
-    const NEUTRAL_GRADES = new Set(["Fe 415"]);
 
     function text(key) {
       return data.i18n.en[key] || key;
@@ -275,13 +273,7 @@
 
       const rawName = grade.name || "";
       const imageName = grade.image || GRADE_IMAGE_MAP[rawName] || rawName + ".jpg";
-      let mediaClass = "";
-      if (POSTER_GRADES.has(rawName)) {
-        mediaClass = " media--poster media--missing";
-      } else if (NEUTRAL_GRADES.has(rawName)) {
-        mediaClass = " media--missing";
-      }
-      const imageBox = element("div", "grade-card__image product-card__image media-frame" + mediaClass);
+      const imageBox = element("div", "grade-card__image product-card__image media-frame");
       const img = element("img", "", undefined);
       img.src = base + "/assets/images/" + imageName;
       img.alt = (grade.displayTitle || grade.name) + " TMT reinforcement steel rebar";

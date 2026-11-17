@@ -298,20 +298,23 @@
 .cta-band .btn-primary,
 .page-hero .btn-primary {
   border-radius: 9999px;
-  padding: 13px 28px;
+  padding: 11px clamp(16px, 1.3vw, 22px);
   background-color: #FFC82C;
   color: #0D131A;
   border: 2px solid #FFC82C;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  font-size: 0.86rem;
   box-shadow: 0 4px 18px rgba(255, 200, 44, 0.35);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   gap: var(--space-2);
   transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .btn-primary--pill:hover,
@@ -325,67 +328,48 @@
   box-shadow: 0 6px 24px rgba(255, 200, 44, 0.5);
 }
 
-/* Secondary White Pill Button matching reference */
+/* Secondary & Outline Cohesive Frosted Buttons */
 .btn-secondary--pill,
 .hero .btn-secondary,
-.page-hero .btn-secondary {
-  border-radius: 9999px;
-  padding: 13px 28px;
-  background-color: #FFFFFF;
-  color: #0D131A;
-  border: 2px solid #FFFFFF;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.92rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  transition: transform 200ms ease, background-color 200ms ease;
-  text-decoration: none;
-}
-
-.btn-secondary--pill:hover,
-.hero .btn-secondary:hover,
-.page-hero .btn-secondary:hover {
-  background-color: #E5E9EE;
-  border-color: #E5E9EE;
-  color: #0D131A;
-  transform: translateY(-2px);
-}
-
-/* Outline Pill Button */
+.page-hero .btn-secondary,
 .btn-outline--pill,
 .hero .btn-outline,
 .cta-band .btn-outline,
 .page-hero .btn-outline {
   border-radius: 9999px;
-  padding: 13px 24px;
-  background-color: transparent;
+  padding: 11px clamp(14px, 1.2vw, 18px);
+  background-color: rgba(255, 255, 255, 0.06);
   color: #FFFFFF;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.38);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  font-size: 0.86rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   gap: var(--space-2);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
+.btn-secondary--pill:hover,
+.hero .btn-secondary:hover,
+.page-hero .btn-secondary:hover,
 .btn-outline--pill:hover,
 .hero .btn-outline:hover,
 .cta-band .btn-outline:hover,
 .page-hero .btn-outline:hover {
-  background-color: rgba(255, 200, 44, 0.1);
-  border-color: #FFC82C;
-  color: #FFC82C;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Grid placement for the hero and page-hero media columns */
@@ -537,11 +521,11 @@
 }
 
 .hero__arrow--prev {
-  inset-inline-start: 24px;
+  inset-inline-start: clamp(16px, 2.5vw, 36px);
 }
 
 .hero__arrow--next {
-  inset-inline-end: 24px;
+  inset-inline-end: clamp(16px, 2.5vw, 36px);
 }
 
 .hero__dots {
