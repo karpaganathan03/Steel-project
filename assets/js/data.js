@@ -27,6 +27,8 @@ window.SteelData = {
       ]
     },
     { key: "navEnquiry", href: "price-enquiry.html", page: "price-enquiry" },
+    { key: "navAbout", href: "about.html", page: "about" },
+    { key: "navServices", href: "services.html", page: "services" },
     { key: "navContact", href: "contact.html", page: "contact" }
   ],
   socialLinks: [
@@ -40,12 +42,14 @@ window.SteelData = {
   i18n: {
     en: {
       navHome: "Home",
-      navHomeMain: "Steel Supply & Product Highlights",
-      navHomeDetailed: "Company, Products & Guides",
+      navHomeMain: "Home 1 - Steel Supply & Products",
+      navHomeDetailed: "Home 2 - Company & Guides",
       navProducts: "Products",
       navGrade: "By Grade",
       navSize: "By Size",
       navEnquiry: "Price Enquiry",
+      navAbout: "About Us",
+      navServices: "Services",
       navContact: "Contact",
       quoteCta: "Get Quote",
       themeToggle: "Toggle color theme",
@@ -355,6 +359,8 @@ window.SteelData = {
       navGrade: "حسب الدرجة",
       navSize: "حسب المقاس",
       navEnquiry: "طلب عرض سعر",
+      navAbout: "من نحن",
+      navServices: "الخدمات",
       navContact: "اتصل بنا",
       quoteCta: "اطلب عرض سعر",
       themeToggle: "تغيير سمة الألوان",

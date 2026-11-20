@@ -288,17 +288,9 @@
   translate: -4px 0;
 }
 
-.contact-card__icon .contact-icon--whatsapp {
+.contact-card__icon svg[fill="currentColor"] {
   fill: currentColor;
   stroke: none;
-}
-
-.contact-card__icon .contact-icon--whatsapp .contact-icon__cutout {
-  fill: var(--color-gold-soft);
-}
-
-.contact-card:hover .contact-card__icon .contact-icon--whatsapp .contact-icon__cutout {
-  fill: var(--color-gold);
 }
 
 @media (min-width: 600px) {

@@ -161,7 +161,35 @@
 }
 
 .products-grade__table {
+  width: min(100%, 640px);
   margin-block-start: var(--space-8);
+}
+
+.products-grade__table table {
+  min-width: 560px;
+  table-layout: fixed;
+}
+
+.products-grade__table-grade {
+  width: 16%;
+}
+
+.products-grade__table-yield {
+  width: 32%;
+}
+
+.products-grade__table-elongation {
+  width: 30%;
+}
+
+.products-grade__table-sizes {
+  width: 22%;
+}
+
+.products-grade__table th,
+.products-grade__table td {
+  padding-inline: clamp(var(--space-2), 1.4vw, var(--space-4));
+  text-align: start;
 }
 
 .products-grade__disclaimer {

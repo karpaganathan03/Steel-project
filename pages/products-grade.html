@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../assets/css/products-grade.css">
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="../assets/css/media.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="../assets/js/main.js"></script>
   <script defer src="../assets/js/theme.js"></script>
   <script defer src="../assets/js/direction.js"></script>
@@ -119,6 +120,12 @@
         </div>
         <div class="table-scroll products-grade__table" tabindex="0" role="region" aria-label="TMT grade property comparison" data-i18n-aria-label="gradeComparisonTableLabel">
           <table>
+            <colgroup>
+              <col class="products-grade__table-grade">
+              <col class="products-grade__table-yield">
+              <col class="products-grade__table-elongation">
+              <col class="products-grade__table-sizes">
+            </colgroup>
             <thead>
               <tr><th scope="col" data-i18n="gradeTableGrade">Grade</th><th scope="col" data-i18n="gradeTableYield">Minimum yield strength</th><th scope="col" data-i18n="gradeTableElongation">Elongation reference</th><th scope="col" data-i18n="gradeTableSizes">Example sizes</th></tr>
             </thead>

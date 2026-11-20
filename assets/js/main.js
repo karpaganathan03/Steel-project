@@ -48,8 +48,11 @@
       }).join("");
       const dropdownLabel = item.page === "index" ? "Show home page options" : data.i18n.en.showCategories;
 
-      return '<li class="site-nav__item site-nav__item--dropdown' + (isActive ? " is-active" : "") + '">' +
-        '<div class="site-nav__product-row"><a class="site-nav__link" data-i18n="' + item.key + '" href="' + href + '"' + active + ">" + data.i18n.en[item.key] + "</a>" +
+      const homeArrow = item.page === "index"
+        ? '<span class="site-nav__home-arrow" aria-hidden="true"></span>'
+        : "";
+      return '<li class="site-nav__item site-nav__item--dropdown' + (item.page === "index" ? " site-nav__item--home" : "") + (isActive ? " is-active" : "") + '">' +
+        '<div class="site-nav__product-row"><a class="site-nav__link" data-i18n="' + item.key + '" href="' + href + '"' + active + ">" + data.i18n.en[item.key] + homeArrow + "</a>" +
         '<button class="nav-dropdown__toggle icon-button" type="button" aria-label="' + dropdownLabel + '" aria-expanded="false" aria-controls="' + item.page + '-submenu" data-dropdown-toggle><span class="visually-hidden">' + dropdownLabel + "</span></button></div>" +
         '<ul class="site-nav__dropdown" id="' + item.page + '-submenu">' + childItems + "</ul></li>";
     }).join("");
@@ -64,18 +67,17 @@
     const brandTitle = data.brand.logo + " " + data.brand.descriptor;
 
     host.innerHTML =
-      '<header class="site-header"><div class="container site-header__inner">' +
+      '<header class="site-header"><div class="container site-header__inner flex items-center justify-between">' +
       '<a class="brand" href="' + localUrl("index.html") + '" aria-label="' + brandTitle + '">' +
       '<img class="brand__logo" src="' + localUrl("assets/images/Logo.png") + '" alt="' + brandTitle + '" width="144" height="42" loading="eager" decoding="async">' +
       '<span class="visually-hidden">' + brandTitle + "</span></a>" +
-      '<nav class="site-nav" id="primary-navigation" aria-label="Main navigation" aria-hidden="true" inert>' +
+      '<nav class="site-nav flex items-center" id="primary-navigation" aria-label="Main navigation" aria-hidden="true" inert>' +
       '<ul class="site-nav__links">' + renderNavigation(data) + "</ul>" +
       '<div class="site-nav__actions">' +
-      '<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle theme">' +
+      '<button class="icon-button theme-toggle inline-grid place-items-center" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle theme">' +
       '<svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>' +
       '<svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.8 8.8 0 1 0 20.5 15.2Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg></button>' +
-      '<button class="icon-button direction-toggle" type="button" data-direction-toggle aria-pressed="false" aria-label="Switch to right-to-left layout" title="Switch layout direction">' +
-      '<svg class="icon-dir" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>' +
+      '<button class="icon-button direction-toggle inline-flex items-center justify-center" type="button" data-direction-toggle aria-pressed="false" aria-label="Switch to right-to-left layout" title="Switch layout direction">' +
       '<span data-direction-label>LTR</span></button>' +
       '<a class="btn-primary btn-primary--sm header-quote" href="' + pageUrl("price-enquiry.html") + '"><span data-i18n="quoteCta">Get Quote</span></a>' +
       "</div></nav>" +
@@ -164,7 +166,7 @@
       '<li><span class="footer-address">' + data.brand.address + "</span></li>" +
       '<li><a href="tel:' + data.brand.phoneHref + '" dir="ltr"><bdi dir="ltr">' + data.brand.phone + "</bdi></a></li>" +
       '<li><a href="' + pageUrl("contact.html") + '" data-i18n="footerLocation">' + i18n.footerLocation + "</a></li>" +
-      '<li><a href="' + localUrl("index.html#faq") + '" data-i18n="footerFaq">' + (i18n.footerFaq || "Procurement FAQ") + "</a></li>" +
+      '<li><a href="' + pageUrl("services.html#faq") + '" data-i18n="footerFaq">' + (i18n.footerFaq || "Procurement FAQ") + "</a></li>" +
       "</ul></div>" +
       "</div></div>" +
       '<div class="site-footer__bottom">' +
@@ -173,8 +175,8 @@
       '<p class="site-footer__copyright">© <span data-footer-year>' + new Date().getFullYear() +
       "</span> " + data.brand.name + '. <span data-i18n="footerCopyright">' + i18n.footerCopyright + "</span></p>" +
       '<div class="site-footer__legal-links">' +
-      '<a class="site-footer__legal-link" href="' + pageUrl("contact.html#privacy") + '" data-i18n="footerPrivacy">' + (i18n.footerPrivacy || "Privacy") + "</a>" +
-      '<a class="site-footer__legal-link" href="' + pageUrl("contact.html#terms") + '" data-i18n="footerTerms">' + (i18n.footerTerms || "Terms") + "</a>" +
+      '<a class="site-footer__legal-link" href="' + pageUrl("privacy.html") + '" data-i18n="footerPrivacy">' + (i18n.footerPrivacy || "Privacy") + "</a>" +
+      '<a class="site-footer__legal-link" href="' + pageUrl("terms.html") + '" data-i18n="footerTerms">' + (i18n.footerTerms || "Terms") + "</a>" +
       "</div>" +
       '<a class="back-to-top" href="#top" aria-label="' + i18n.backToTop + '"><span class="icon-dir" aria-hidden="true">↑</span></a>' +
       "</div></div>" +
@@ -249,7 +251,7 @@
     renderHeader(data);
     renderFooter(data);
 
-    ["theme", "direction", "navigation", "scrollProgress", "products", "forms", "home2"].forEach(function (name) {
+    ["theme", "direction", "navigation", "scrollProgress", "products", "forms", "home2", "about", "services"].forEach(function (name) {
       if (modules[name] && typeof modules[name].init === "function") {
         modules[name].init();
       }

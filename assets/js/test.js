@@ -39,11 +39,24 @@
         nav.querySelector('a[href="./index.html"]') !== null &&
         nav.querySelector('a[href="./pages/home-2.html"]') !== null;
     });
+    check("About and Services follow Price Enquiry in navigation", function () {
+      const links = Array.from(nav.querySelectorAll(".site-nav__links > li")).map(function (item) {
+        return item.querySelector(".site-nav__link");
+      }).filter(Boolean);
+      const labels = links.map(function (link) {
+        return link.textContent.trim();
+      });
+      return nav.querySelector('a[href="./pages/about.html"]') !== null &&
+        nav.querySelector('a[href="./pages/services.html"]') !== null &&
+        labels.indexOf("Price Enquiry") < labels.indexOf("About Us") &&
+        labels.indexOf("About Us") < labels.indexOf("Services") &&
+        labels.indexOf("Services") < labels.indexOf("Contact");
+    });
     check("Home dropdown has two descriptive destinations", function () {
       const links = Array.from(nav.querySelectorAll("#index-submenu a"));
       return links.length === 2 &&
-        links[0].textContent === "Steel Supply & Product Highlights" &&
-        links[1].textContent === "Company, Products & Guides";
+        links[0].textContent === "Home 1 - Steel Supply & Products" &&
+        links[1].textContent === "Home 2 - Company & Guides";
     });
     check("Header remains sticky at the viewport top", function () {
       return Boolean(headerHost &&

@@ -59,7 +59,7 @@
     if (image.complete) {
       if (image.naturalWidth) {
         markLoaded(image);
-      } else {
+      } else if (image.getAttribute("loading") !== "lazy") {
         markMissing(image, frame);
       }
     }

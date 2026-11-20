@@ -9,7 +9,7 @@
     const menuButton = document.querySelector("[data-nav-toggle]");
     const directionToggle = document.querySelector("[data-direction-toggle]");
     const backdrop = document.querySelector("[data-nav-close]");
-    const media = window.matchMedia("(max-width: 1023px)");
+    const media = window.matchMedia("(max-width: 1199px)");
     if (!header || !navigation || !menuButton || !backdrop) return;
 
     let activeDropdown = null;

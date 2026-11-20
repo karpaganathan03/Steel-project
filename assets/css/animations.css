@@ -224,6 +224,7 @@
   transform: scale(0.985);
 }
 
+[dir="rtl"] .js .section-heading.reveal h2::after,
 [dir="rtl"] .section-heading h2::after,
 [dir="rtl"] .hero__dot::after {
   transform-origin: right center;

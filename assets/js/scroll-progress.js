@@ -7,9 +7,13 @@
     const bar = document.querySelector("[data-scroll-progress]");
     if (!bar) return;
 
+    let pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    function updatePageHeight() {
+      pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+    }
+
     let scheduled = false;
     function updateProgress() {
-      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = pageHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / pageHeight)) : 0;
       bar.style.setProperty("--scroll-progress", String(progress));
       scheduled = false;
@@ -22,7 +26,11 @@
     }
 
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("resize", function () {
+      updatePageHeight();
+      scheduleUpdate();
+    }, { passive: true });
+    updatePageHeight();
     updateProgress();
   }
 
